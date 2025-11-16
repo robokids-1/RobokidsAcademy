@@ -12,6 +12,15 @@
 </head>
 
 <body>
+    <!-- Background Slideshow -->
+    <div class="slideshow-container">
+        <div class="slideshow-overlay"></div>
+        <div class="slide active" style="background-image: url('photos/IMG_5147.jpg');"></div>
+        <div class="slide" style="background-image: url('photos/IMG_5150.jpg');"></div>
+        <div class="slide" style="background-image: url('photos/IMG_5152.jpg');"></div>
+        <div class="slide" style="background-image: url('photos/IMG_5177.jpg');"></div>
+    </div>
+
     <header>
         <nav>
             <div class="logo">
@@ -64,7 +73,10 @@
                         <li>Programming with Scratch</li>
                         <li>Sensor integration</li>
                     </ul>
-                    <button class="enroll-btn" onclick="window.location.href='enroll.html'">Enroll Now</button>
+                    <div class="class-buttons">
+                        <button class="curriculum-btn" onclick="openCurriculum()">View Curriculum</button>
+                        <button class="enroll-btn" onclick="window.location.href='enroll.html'">Enroll Now</button>
+                    </div>
                 </div>
 
                 <div class="class-card">
@@ -126,6 +138,147 @@
     <footer>
         <p>&copy; 2024 RoboKids Academy. All rights reserved.</p>
     </footer>
+
+    <!-- Curriculum Modal -->
+    <div id="curriculumModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCurriculum()">&times;</span>
+            <h2>📚 Robot Engineers Curriculum</h2>
+            <div class="curriculum-content">
+                <div class="curriculum-module">
+                    <h3>1. Introduction to Robotics & Basic Electronics</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>What is a robot? Types and real-world applications</li>
+                        <li>Robot parts: sensors, actuators, controllers</li>
+                        <li>Safety in robotics</li>
+                        <li>Basic electronics: circuits, LEDs, switches, batteries</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Build a Simple Flashlight: Students create a working flashlight using a battery, switch, and
+                            LED, learning about circuits and safety.</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>2. Makeblock Bot Building</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Introduction to Makeblock kits and components</li>
+                        <li>Mechanical assembly: frames, wheels, motors</li>
+                        <li>Exploring basic sensors (light, ultrasonic)</li>
+                        <li>Understanding how robots move and sense</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Assemble and Test a Line-Following Robot: Students build a Makeblock robot and program it to
+                            follow a black line on a track using sensors.</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>3. VEX IQ Building</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Introduction to VEX IQ platform and modular parts</li>
+                        <li>Engineering design process: planning, building, testing</li>
+                        <li>Adding attachments and customizing robots</li>
+                        <li>Teamwork and collaboration in robotics</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Obstacle Course Challenge: Teams design and build a VEX IQ robot to navigate a simple
+                            obstacle course, adjusting attachments as needed.</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>4. VEX IQ Block Coding</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Introduction to block-based programming (VEXcode)</li>
+                        <li>Programming robot movements: forward, backward, turns</li>
+                        <li>Using sensors in code (touch, distance)</li>
+                        <li>Debugging and improving code</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Maze Navigation: Students program their VEX IQ robot to autonomously solve a maze using block
+                            coding and sensors.</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>5. Advanced Block Coding & Problem Solving</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Advanced programming concepts: loops, conditionals, variables</li>
+                        <li>Modular programming: breaking tasks into steps</li>
+                        <li>Troubleshooting and debugging strategies</li>
+                        <li>Creative problem-solving in robotics</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Sumo Bot Competition: Students code and modify robots to compete in a friendly sumo match,
+                            using logic and sensors to stay in the ring and push opponents out.</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>6. Introduction to Python Programming</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Transition from block coding to text-based coding</li>
+                        <li>Python basics: syntax, variables, loops, conditionals</li>
+                        <li>Writing simple scripts to control robots</li>
+                        <li>Comparing block code and Python for the same tasks</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Robot Dance Routine: Students write a Python script to make their robot perform a
+                            choreographed dance, using movement commands and timing.</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>7. Introduction to Raspberry Pi</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>What is a Raspberry Pi? Hardware overview and setup</li>
+                        <li>Connecting peripherals: keyboard, mouse, display</li>
+                        <li>Using GPIO pins to control LEDs and sensors</li>
+                        <li>Running Python programs on Raspberry Pi</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Smart Light System: Students use Raspberry Pi and Python to build a light that turns on/off
+                            based on sensor input (e.g., light or motion sensor).</p>
+                    </div>
+                </div>
+
+                <div class="curriculum-module">
+                    <h3>8. 3D Design & 3D Printing + Capstone Projects</h3>
+                    <h4>Topics Covered:</h4>
+                    <ul>
+                        <li>Introduction to 3D printing technology and its role in robotics</li>
+                        <li>Basics of 3D modeling using beginner-friendly software (e.g., Tinkercad)</li>
+                        <li>Designing custom robot parts and accessories</li>
+                        <li>Preparing and printing 3D models</li>
+                        <li>Integrating 3D-printed parts into robotics projects</li>
+                    </ul>
+                    <div class="project-box">
+                        <strong>Hands-On Project:</strong>
+                        <p>Custom Robot Part Design: Students design and 3D print a unique part (e.g., a sensor mount or
+                            decorative shell) for their robot, then integrate it into their final capstone project.</p>
+                        <p><strong>Capstone Project & Showcase:</strong> Teams combine all skills learned to design,
+                            build, and present a creative robotics project, demonstrating coding, electronics,
+                            mechanical design, and 3D printing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
