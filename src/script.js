@@ -1,10 +1,17 @@
 // Smooth scrolling for navigation
 function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
-    element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
+    if (element) {
+        // Account for fixed header height
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
 }
 
 // Add click handlers to navigation links
@@ -13,9 +20,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            scrollToSection(targetId);
+            const href = this.getAttribute('href');
+
+            // Check if it's an anchor link on the same page (starts with #)
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                scrollToSection(targetId);
+            }
+            // If it's a link to a different page (like index.html#classes), allow default behavior
+            // The browser will handle the navigation
         });
     });
 
@@ -151,6 +165,57 @@ function initSlideshow() {
 
 // Initialize slideshow when page loads
 document.addEventListener('DOMContentLoaded', initSlideshow);
+
+// Handle hash navigation when coming from another page
+let hashNavigationAttempts = 0;
+const MAX_HASH_NAVIGATION_ATTEMPTS = 5;
+
+function handleHashNavigation() {
+    const hash = window.location.hash;
+    if (hash && hashNavigationAttempts < MAX_HASH_NAVIGATION_ATTEMPTS) {
+        const sectionId = hash.substring(1); // Remove the #
+        const element = document.getElementById(sectionId);
+
+        if (element) {
+            // Element found, scroll to it
+            hashNavigationAttempts = 0; // Reset counter
+            setTimeout(() => {
+                scrollToSection(sectionId);
+            }, 300); // Increased delay for deployed sites
+        } else {
+            // Element not found yet, try again after a longer delay
+            hashNavigationAttempts++;
+            setTimeout(() => {
+                handleHashNavigation();
+            }, 500);
+        }
+    } else {
+        // Reset attempts after max tries
+        hashNavigationAttempts = 0;
+    }
+}
+
+// Handle hash navigation on page load
+document.addEventListener('DOMContentLoaded', function () {
+    handleHashNavigation();
+});
+
+// Also handle hash navigation after window loads (for slower connections)
+window.addEventListener('load', function () {
+    if (window.location.hash) {
+        setTimeout(() => {
+            handleHashNavigation();
+        }, 100);
+    }
+});
+
+// Handle hash changes (when user clicks links while on the same page)
+window.addEventListener('hashchange', function () {
+    if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        scrollToSection(sectionId);
+    }
+});
 
 // Curriculum Modal Functions
 function openCurriculum() {
