@@ -1,25 +1,41 @@
 // Enrollment Form Script
 
+// ============================================
+// EMAILJS CONFIGURATION REQUIRED
+// ============================================
+// To enable email functionality, you need to:
+// 1. Sign up at https://www.emailjs.com/
+// 2. Create an email service (Gmail recommended)
+// 3. Create an email template
+// 4. Get your Public Key, Service ID, and Template ID
+// 5. Replace the placeholders below with your actual values
+// 6. See EMAILJS_SETUP.md for detailed instructions
+// ============================================
+
+// Initialize EmailJS
+// Replace "YOUR_PUBLIC_KEY" with your EmailJS Public Key from your account dashboard
+(function () {
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("i6FvkeDDJ-zKrgfym"); // Replace with your EmailJS Public Key
+    }
+})();
+
 // Form submission handler
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const enrollmentForm = document.getElementById('enrollmentForm');
     const successMessage = document.getElementById('successMessage');
 
     if (enrollmentForm) {
-        enrollmentForm.addEventListener('submit', function(e) {
+        enrollmentForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Validate form
             if (validateForm()) {
-                // Show success message
-                enrollmentForm.style.display = 'none';
-                successMessage.style.display = 'block';
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-                
-                // In a real application, you would send the form data to a server here
-                console.log('Form submitted with data:', getFormData());
+                // Get form data
+                const formData = getFormData();
+
+                // Send email
+                sendEnrollmentEmail(formData);
             }
         });
     }
@@ -34,7 +50,7 @@ function validateForm() {
         if (!field.value.trim()) {
             isValid = false;
             field.style.borderColor = '#ff4444';
-            
+
             // Reset border color after 2 seconds
             setTimeout(() => {
                 field.style.borderColor = '';
@@ -58,16 +74,30 @@ function validateForm() {
         }
     }
 
-    // Validate phone format
+    // Validate phone format (numbers only, at least 10 digits)
     const phoneField = document.getElementById('parentPhone');
     if (phoneField && phoneField.value) {
-        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-        if (!phoneRegex.test(phoneField.value) || phoneField.value.replace(/\D/g, '').length < 10) {
+        const phoneDigits = phoneField.value.replace(/\D/g, '');
+        if (phoneDigits.length < 10) {
             isValid = false;
             phoneField.style.borderColor = '#ff4444';
-            alert('Please enter a valid phone number');
+            alert('Please enter a valid phone number (numbers only, at least 10 digits)');
             setTimeout(() => {
                 phoneField.style.borderColor = '';
+            }, 2000);
+        }
+    }
+
+    // Validate emergency phone format (numbers only, at least 10 digits)
+    const emergencyPhoneField = document.getElementById('emergencyPhone');
+    if (emergencyPhoneField && emergencyPhoneField.value) {
+        const emergencyPhoneDigits = emergencyPhoneField.value.replace(/\D/g, '');
+        if (emergencyPhoneDigits.length < 10) {
+            isValid = false;
+            emergencyPhoneField.style.borderColor = '#ff4444';
+            alert('Please enter a valid emergency contact phone number (numbers only, at least 10 digits)');
+            setTimeout(() => {
+                emergencyPhoneField.style.borderColor = '';
             }, 2000);
         }
     }
@@ -102,7 +132,7 @@ function getFormData() {
     const form = document.getElementById('enrollmentForm');
     const formData = new FormData(form);
     const data = {};
-    
+
     for (let [key, value] of formData.entries()) {
         if (data[key]) {
             // Handle multiple checkboxes with same name
@@ -115,8 +145,144 @@ function getFormData() {
             data[key] = value;
         }
     }
-    
+
     return data;
+}
+
+// Send enrollment email using EmailJS
+function sendEnrollmentEmail(formData) {
+    // Check if EmailJS is loaded
+    if (typeof emailjs === 'undefined') {
+        console.error('EmailJS is not loaded. Make sure the EmailJS script is included in the HTML.');
+        alert('Email service is not configured. Please contact us directly at robokids209@gmail.com');
+        return;
+    }
+
+    // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
+    // Get these from your EmailJS dashboard after setup
+    const serviceId = 'service_rdnw9gw';      // Replace with your Service ID (e.g., 'service_abc123')
+    const templateId = 'template_dmqrhlj';    // Replace with your Template ID (e.g., 'template_xyz789')
+
+    // Check if configuration is still using placeholders
+    if (serviceId === 'service_rdnw9gw' || templateId === 'template_dmqrhlj') {
+        console.warn('EmailJS is not configured. Please set up EmailJS following EMAILJS_SETUP.md');
+        console.log('Form data (email not sent - EmailJS not configured):', formData);
+
+        // Still show success message to user (for testing/development)
+        const enrollmentForm = document.getElementById('enrollmentForm');
+        const successMessage = document.getElementById('successMessage');
+        enrollmentForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+        return;
+    }
+
+    // Format the email message
+    const emailBody = formatEmailBody(formData);
+
+    // EmailJS template parameters
+    const templateParams = {
+        to_email: 'robokids209@gmail.com',
+        from_name: `${formData.parentFirstName} ${formData.parentLastName}`,
+        subject: `New Enrollment: ${formData.studentFirstName} ${formData.studentLastName}`,
+        message: emailBody,
+        reply_to: formData.parentEmail
+    };
+
+    // Show loading state
+    const submitButton = document.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    // Send email using EmailJS
+    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual values from EmailJS dashboard
+    emailjs.send(serviceId, templateId, templateParams)
+        .then(function (response) {
+            console.log('Email sent successfully!', response.status, response.text);
+
+            // Show success message
+            const enrollmentForm = document.getElementById('enrollmentForm');
+            const successMessage = document.getElementById('successMessage');
+
+            enrollmentForm.style.display = 'none';
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(function (error) {
+            console.error('Failed to send email:', error);
+
+            // Show error message to user
+            alert('There was an error sending your enrollment. Please try again or contact us directly at robokids209@gmail.com');
+
+            // Reset button
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        });
+}
+
+// Format form data into readable email body
+function formatEmailBody(data) {
+    let body = `NEW ENROLLMENT REQUEST\n\n`;
+    body += `========================================\n\n`;
+
+    // Student Information
+    body += `STUDENT INFORMATION\n`;
+    body += `-------------------\n`;
+    body += `Name: ${data.studentFirstName} ${data.studentLastName}\n`;
+    body += `Age: ${data.studentAge}\n`;
+    if (data.studentGrade) body += `Grade: ${data.studentGrade}\n`;
+    body += `Selected Class: ${data.classSelection}\n\n`;
+
+    // Parent/Guardian Information
+    body += `PARENT/GUARDIAN INFORMATION\n`;
+    body += `--------------------------\n`;
+    body += `Name: ${data.parentFirstName} ${data.parentLastName}\n`;
+    body += `Email: ${data.parentEmail}\n`;
+    body += `Phone: ${data.parentPhone}\n`;
+    if (data.parentAddress) body += `Address: ${data.parentAddress}\n`;
+    body += `\n`;
+
+    // Emergency Contact
+    body += `EMERGENCY CONTACT\n`;
+    body += `-----------------\n`;
+    body += `Name: ${data.emergencyName}\n`;
+    body += `Phone: ${data.emergencyPhone}\n`;
+    if (data.emergencyRelation) body += `Relationship: ${data.emergencyRelation}\n`;
+    body += `\n`;
+
+    // Medical Information
+    if (data.allergies || data.medications) {
+        body += `MEDICAL INFORMATION\n`;
+        body += `-------------------\n`;
+        if (data.allergies) body += `Allergies/Medical Conditions: ${data.allergies}\n`;
+        if (data.medications) body += `Medications: ${data.medications}\n`;
+        body += `\n`;
+    }
+
+    // Additional Information
+    body += `ADDITIONAL INFORMATION\n`;
+    body += `----------------------\n`;
+    if (data.experience) body += `Previous Experience: ${data.experience}\n`;
+    if (data.interests) {
+        const interests = Array.isArray(data.interests) ? data.interests.join(', ') : data.interests;
+        body += `Interests: ${interests}\n`;
+    }
+    if (data.goals) body += `Goals: ${data.goals}\n`;
+    body += `\n`;
+
+    // Permissions
+    body += `PERMISSIONS\n`;
+    body += `-----------\n`;
+    body += `Photo Permission: ${data.photoPermission ? 'Yes' : 'No'}\n`;
+    body += `Newsletter Subscription: ${data.newsletter ? 'Yes' : 'No'}\n`;
+    body += `Terms Accepted: Yes\n`;
+    body += `\n`;
+
+    body += `========================================\n`;
+    body += `Submitted: ${new Date().toLocaleString()}\n`;
+
+    return body;
 }
 
 // Reset form
@@ -137,44 +303,70 @@ function resetForm() {
 // Show terms and conditions (placeholder)
 function showTerms() {
     alert('Terms and Conditions:\n\n' +
-          '1. Enrollment is subject to availability\n' +
-          '2. Payment is due before the start of classes\n' +
-          '3. Refund policy: 100% refund if cancelled 7 days before class starts\n' +
-          '4. Students must follow safety guidelines\n' +
-          '5. Parents/guardians are responsible for student behavior\n\n' +
-          'For full terms, please contact us at hello@robokids.com');
+        '1. Enrollment is subject to availability\n' +
+        '2. Payment is due before the start of classes\n' +
+        '3. Refund policy: 100% refund if cancelled 7 days before class starts\n' +
+        '4. Students must follow safety guidelines\n' +
+        '5. Parents/guardians are responsible for student behavior\n\n' +
+        'For full terms, please contact us at hello@robokids.com');
     return false;
 }
 
 // Show privacy policy (placeholder)
 function showPrivacy() {
     alert('Privacy Policy:\n\n' +
-          '1. We collect information necessary for enrollment and communication\n' +
-          '2. Student information is kept confidential\n' +
-          '3. We do not share personal information with third parties\n' +
-          '4. Photos may be used for promotional purposes with permission\n' +
-          '5. You can request data deletion at any time\n\n' +
-          'For full privacy policy, please contact us at hello@robokids.com');
+        '1. We collect information necessary for enrollment and communication\n' +
+        '2. Student information is kept confidential\n' +
+        '3. We do not share personal information with third parties\n' +
+        '4. Photos may be used for promotional purposes with permission\n' +
+        '5. You can request data deletion at any time\n\n' +
+        'For full privacy policy, please contact us at hello@robokids.com');
     return false;
 }
 
-// Add form field animations
-document.addEventListener('DOMContentLoaded', function() {
+// Add form field animations and phone number restrictions
+document.addEventListener('DOMContentLoaded', function () {
     const formFields = document.querySelectorAll('input, select, textarea');
-    
+
+    // Restrict phone number fields to numbers only
+    const phoneFields = document.querySelectorAll('#parentPhone, #emergencyPhone');
+    phoneFields.forEach(field => {
+        // Prevent non-numeric input
+        field.addEventListener('input', function (e) {
+            // Remove any non-numeric characters
+            this.value = this.value.replace(/\D/g, '');
+        });
+
+        // Prevent paste of non-numeric content
+        field.addEventListener('paste', function (e) {
+            e.preventDefault();
+            const paste = (e.clipboardData || window.clipboardData).getData('text');
+            const numbersOnly = paste.replace(/\D/g, '');
+            this.value = numbersOnly;
+        });
+
+        // Prevent non-numeric keypress
+        field.addEventListener('keypress', function (e) {
+            const char = String.fromCharCode(e.which);
+            if (!/[0-9]/.test(char)) {
+                e.preventDefault();
+            }
+        });
+    });
+
     formFields.forEach(field => {
         // Add focus effect
-        field.addEventListener('focus', function() {
+        field.addEventListener('focus', function () {
             this.parentElement.style.transform = 'scale(1.02)';
             this.parentElement.style.transition = 'transform 0.2s';
         });
-        
-        field.addEventListener('blur', function() {
+
+        field.addEventListener('blur', function () {
             this.parentElement.style.transform = 'scale(1)';
         });
-        
+
         // Add validation feedback
-        field.addEventListener('input', function() {
+        field.addEventListener('input', function () {
             if (this.hasAttribute('required') && this.value.trim()) {
                 this.style.borderColor = '#4CAF50';
             } else if (this.hasAttribute('required')) {

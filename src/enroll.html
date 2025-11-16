@@ -116,7 +116,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="parentPhone">Phone Number *</label>
-                                <input type="tel" id="parentPhone" name="parentPhone" required>
+                                <input type="tel" id="parentPhone" name="parentPhone" pattern="[0-9]*"
+                                    inputmode="numeric" required>
                             </div>
                         </div>
 
@@ -137,7 +138,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="emergencyPhone">Emergency Contact Phone *</label>
-                                <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                                <input type="tel" id="emergencyPhone" name="emergencyPhone" pattern="[0-9]*"
+                                    inputmode="numeric" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -255,6 +257,7 @@
         <p>&copy; 2024 RoboKids Academy. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
     <script src="enroll-script.js"></script>
 </body>
