@@ -96,21 +96,57 @@ document.addEventListener('DOMContentLoaded', addRobotSounds);
 // Background Slideshow
 function initSlideshow() {
     const slides = document.querySelectorAll('.slide');
+
+    // Only initialize if slides exist (slideshow is only on index.html, not enroll.html)
+    if (slides.length === 0) {
+        return;
+    }
+
     let currentSlide = 0;
+    let slideshowInterval = null;
 
     function showNextSlide() {
+        // Re-query slides in case DOM changed
+        const currentSlides = document.querySelectorAll('.slide');
+
+        // Check if slides still exist and currentSlide is valid
+        if (currentSlides.length === 0) {
+            // Clear interval if no slides exist
+            if (slideshowInterval) {
+                clearInterval(slideshowInterval);
+                slideshowInterval = null;
+            }
+            return;
+        }
+
+        // Ensure currentSlide is within bounds
+        if (currentSlide >= currentSlides.length) {
+            currentSlide = 0;
+        }
+
         // Remove active class from current slide
-        slides[currentSlide].classList.remove('active');
+        if (currentSlides[currentSlide]) {
+            currentSlides[currentSlide].classList.remove('active');
+        }
 
         // Move to next slide
-        currentSlide = (currentSlide + 1) % slides.length;
+        currentSlide = (currentSlide + 1) % currentSlides.length;
 
         // Add active class to new slide
-        slides[currentSlide].classList.add('active');
+        if (currentSlides[currentSlide]) {
+            currentSlides[currentSlide].classList.add('active');
+        }
     }
 
     // Change slide every 5 seconds
-    setInterval(showNextSlide, 5000);
+    slideshowInterval = setInterval(showNextSlide, 5000);
+
+    // Clean up on page unload
+    window.addEventListener('beforeunload', function () {
+        if (slideshowInterval) {
+            clearInterval(slideshowInterval);
+        }
+    });
 }
 
 // Initialize slideshow when page loads

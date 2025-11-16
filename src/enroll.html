@@ -128,27 +128,6 @@
                         </div>
                     </div>
 
-                    <!-- Emergency Contact -->
-                    <div class="form-section">
-                        <h4>🚨 Emergency Contact</h4>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="emergencyName">Emergency Contact Name *</label>
-                                <input type="text" id="emergencyName" name="emergencyName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="emergencyPhone">Emergency Contact Phone *</label>
-                                <input type="tel" id="emergencyPhone" name="emergencyPhone" pattern="[0-9]*"
-                                    inputmode="numeric" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="emergencyRelation">Relationship to Student</label>
-                            <input type="text" id="emergencyRelation" name="emergencyRelation"
-                                placeholder="e.g., Grandmother, Uncle, Family Friend">
-                        </div>
-                    </div>
-
                     <!-- Medical Information -->
                     <div class="form-section">
                         <h4>🏥 Medical Information</h4>
@@ -248,6 +227,18 @@
                     <p>Thank you for enrolling your child in RoboKids Academy. We'll contact you within 24 hours to
                         confirm your enrollment and provide next steps.</p>
                     <button class="btn-primary" onclick="window.location.href='index.html'">Return to Home</button>
+                </div>
+
+                <!-- Error Message (hidden by default) -->
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Enrollment Submission Failed</h3>
+                    <p>We're sorry, but there was an error sending your enrollment. Please try again or contact us
+                        directly at <a href="mailto:robokids209@gmail.com">robokids209@gmail.com</a>.</p>
+                    <div class="error-actions">
+                        <button class="btn-secondary" onclick="retrySubmission()">Try Again</button>
+                        <button class="btn-primary" onclick="window.location.href='index.html'">Return to Home</button>
+                    </div>
                 </div>
             </div>
         </section>

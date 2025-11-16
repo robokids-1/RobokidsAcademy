@@ -20,6 +20,9 @@
     }
 })();
 
+// Store form data for retry
+let lastFormData = null;
+
 // Form submission handler
 document.addEventListener('DOMContentLoaded', function () {
     const enrollmentForm = document.getElementById('enrollmentForm');
@@ -33,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (validateForm()) {
                 // Get form data
                 const formData = getFormData();
+
+                // Store form data for potential retry
+                lastFormData = formData;
 
                 // Send email
                 sendEnrollmentEmail(formData);
@@ -84,20 +90,6 @@ function validateForm() {
             alert('Please enter a valid phone number (numbers only, at least 10 digits)');
             setTimeout(() => {
                 phoneField.style.borderColor = '';
-            }, 2000);
-        }
-    }
-
-    // Validate emergency phone format (numbers only, at least 10 digits)
-    const emergencyPhoneField = document.getElementById('emergencyPhone');
-    if (emergencyPhoneField && emergencyPhoneField.value) {
-        const emergencyPhoneDigits = emergencyPhoneField.value.replace(/\D/g, '');
-        if (emergencyPhoneDigits.length < 10) {
-            isValid = false;
-            emergencyPhoneField.style.borderColor = '#ff4444';
-            alert('Please enter a valid emergency contact phone number (numbers only, at least 10 digits)');
-            setTimeout(() => {
-                emergencyPhoneField.style.borderColor = '';
             }, 2000);
         }
     }
@@ -154,26 +146,38 @@ function sendEnrollmentEmail(formData) {
     // Check if EmailJS is loaded
     if (typeof emailjs === 'undefined') {
         console.error('EmailJS is not loaded. Make sure the EmailJS script is included in the HTML.');
-        alert('Email service is not configured. Please contact us directly at robokids209@gmail.com');
+
+        // Show error message on page
+        const enrollmentForm = document.getElementById('enrollmentForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        if (enrollmentForm && errorMessage) {
+            enrollmentForm.style.display = 'none';
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth' });
+        }
         return;
     }
 
-    // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
-    // Get these from your EmailJS dashboard after setup
-    const serviceId = 'service_rdnw9gw';      // Replace with your Service ID (e.g., 'service_abc123')
-    const templateId = 'template_dmqrhlj';    // Replace with your Template ID (e.g., 'template_xyz789')
+    // EmailJS Configuration
+    // These are configured with actual values from EmailJS dashboard
+    const serviceId = 'service_rdnw9gw';
+    const templateId = 'template_dmqrhlj';
 
-    // Check if configuration is still using placeholders
-    if (serviceId === 'service_rdnw9gw' || templateId === 'template_dmqrhlj') {
+    // Validate that EmailJS is properly configured
+    if (!serviceId || !templateId || serviceId === 'YOUR_SERVICE_ID' || templateId === 'YOUR_TEMPLATE_ID') {
         console.warn('EmailJS is not configured. Please set up EmailJS following EMAILJS_SETUP.md');
         console.log('Form data (email not sent - EmailJS not configured):', formData);
 
-        // Still show success message to user (for testing/development)
+        // Show error message to user
         const enrollmentForm = document.getElementById('enrollmentForm');
-        const successMessage = document.getElementById('successMessage');
-        enrollmentForm.style.display = 'none';
-        successMessage.style.display = 'block';
-        successMessage.scrollIntoView({ behavior: 'smooth' });
+        const errorMessage = document.getElementById('errorMessage');
+
+        if (enrollmentForm && errorMessage) {
+            enrollmentForm.style.display = 'none';
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth' });
+        }
         return;
     }
 
@@ -212,8 +216,13 @@ function sendEnrollmentEmail(formData) {
         .catch(function (error) {
             console.error('Failed to send email:', error);
 
-            // Show error message to user
-            alert('There was an error sending your enrollment. Please try again or contact us directly at robokids209@gmail.com');
+            // Show error message on page
+            const enrollmentForm = document.getElementById('enrollmentForm');
+            const errorMessage = document.getElementById('errorMessage');
+
+            enrollmentForm.style.display = 'none';
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth' });
 
             // Reset button
             submitButton.textContent = originalButtonText;
@@ -241,14 +250,6 @@ function formatEmailBody(data) {
     body += `Email: ${data.parentEmail}\n`;
     body += `Phone: ${data.parentPhone}\n`;
     if (data.parentAddress) body += `Address: ${data.parentAddress}\n`;
-    body += `\n`;
-
-    // Emergency Contact
-    body += `EMERGENCY CONTACT\n`;
-    body += `-----------------\n`;
-    body += `Name: ${data.emergencyName}\n`;
-    body += `Phone: ${data.emergencyPhone}\n`;
-    if (data.emergencyRelation) body += `Relationship: ${data.emergencyRelation}\n`;
     body += `\n`;
 
     // Medical Information
@@ -296,6 +297,35 @@ function resetForm() {
             fields.forEach(field => {
                 field.style.borderColor = '';
             });
+            // Clear stored form data
+            lastFormData = null;
+        }
+    }
+}
+
+// Retry submission after error
+function retrySubmission() {
+    const errorMessage = document.getElementById('errorMessage');
+    const enrollmentForm = document.getElementById('enrollmentForm');
+
+    // Hide error message
+    if (errorMessage) {
+        errorMessage.style.display = 'none';
+    }
+
+    // Show form again
+    if (enrollmentForm) {
+        enrollmentForm.style.display = 'block';
+        enrollmentForm.scrollIntoView({ behavior: 'smooth' });
+
+        // If we have stored form data, user can resubmit
+        // The form fields should still contain the data since we didn't reset them
+        if (lastFormData) {
+            // Focus on submit button to make it easy to retry
+            const submitButton = enrollmentForm.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.focus();
+            }
         }
     }
 }
@@ -329,7 +359,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const formFields = document.querySelectorAll('input, select, textarea');
 
     // Restrict phone number fields to numbers only
-    const phoneFields = document.querySelectorAll('#parentPhone, #emergencyPhone');
+    const phoneFields = document.querySelectorAll('#parentPhone');
     phoneFields.forEach(field => {
         // Prevent non-numeric input
         field.addEventListener('input', function (e) {
