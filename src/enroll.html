@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now - RoboKids Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enroll-styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="robot-emoji">🤖</span>
+                <h1>RoboKids Academy</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#classes">Classes</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="enroll.html" class="active">Enroll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="enroll-hero">
+            <div class="enroll-hero-content">
+                <h2>Join the Robot Revolution! 🚀</h2>
+                <p>Fill out the form below to enroll your child in our amazing robotics classes</p>
+            </div>
+        </section>
+
+        <section class="enrollment-form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>Enrollment Form</h3>
+                    <p>Please provide the following information to complete your enrollment</p>
+                </div>
+
+                <form id="enrollmentForm" class="enrollment-form">
+                    <!-- Student Information -->
+                    <div class="form-section">
+                        <h4>👦👧 Student Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentFirstName">Student's First Name *</label>
+                                <input type="text" id="studentFirstName" name="studentFirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentLastName">Student's Last Name *</label>
+                                <input type="text" id="studentLastName" name="studentLastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="studentAge">Student's Age *</label>
+                                <input type="number" id="studentAge" name="studentAge" min="6" max="16" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="studentGrade">Current Grade</label>
+                                <select id="studentGrade" name="studentGrade">
+                                    <option value="">Select Grade</option>
+                                    <option value="1st">1st Grade</option>
+                                    <option value="2nd">2nd Grade</option>
+                                    <option value="3rd">3rd Grade</option>
+                                    <option value="4th">4th Grade</option>
+                                    <option value="5th">5th Grade</option>
+                                    <option value="6th">6th Grade</option>
+                                    <option value="7th">7th Grade</option>
+                                    <option value="8th">8th Grade</option>
+                                    <option value="9th">9th Grade</option>
+                                    <option value="10th">10th Grade</option>
+                                    <option value="11th">11th Grade</option>
+                                    <option value="12th">12th Grade</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="classSelection">Select Class *</label>
+                            <select id="classSelection" name="classSelection" required>
+                                <option value="">Choose a Class</option>
+                                <option value="beginner">🧩 Beginner Builders (Ages 6-8)</option>
+                                <option value="engineer">⚙️ Robot Engineers (Ages 9-12)</option>
+                                <option value="inventor">🚀 Future Inventors (Ages 13-16)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Parent/Guardian Information -->
+                    <div class="form-section">
+                        <h4>👨‍👩‍👧‍👦 Parent/Guardian Information</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parentFirstName">Parent's First Name *</label>
+                                <input type="text" id="parentFirstName" name="parentFirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentLastName">Parent's Last Name *</label>
+                                <input type="text" id="parentLastName" name="parentLastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parentEmail">Email Address *</label>
+                                <input type="email" id="parentEmail" name="parentEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="parentPhone">Phone Number *</label>
+                                <input type="tel" id="parentPhone" name="parentPhone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parentAddress">Address</label>
+                            <textarea id="parentAddress" name="parentAddress" rows="3"
+                                placeholder="Street, City, State, ZIP Code"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="form-section">
+                        <h4>🚨 Emergency Contact</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="emergencyName">Emergency Contact Name *</label>
+                                <input type="text" id="emergencyName" name="emergencyName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyPhone">Emergency Contact Phone *</label>
+                                <input type="tel" id="emergencyPhone" name="emergencyPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="emergencyRelation">Relationship to Student</label>
+                            <input type="text" id="emergencyRelation" name="emergencyRelation"
+                                placeholder="e.g., Grandmother, Uncle, Family Friend">
+                        </div>
+                    </div>
+
+                    <!-- Medical Information -->
+                    <div class="form-section">
+                        <h4>🏥 Medical Information</h4>
+                        <div class="form-group">
+                            <label for="allergies">Allergies or Medical Conditions</label>
+                            <textarea id="allergies" name="allergies" rows="3"
+                                placeholder="Please list any allergies, medical conditions, or special needs we should be aware of"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="medications">Current Medications</label>
+                            <textarea id="medications" name="medications" rows="2"
+                                placeholder="List any medications the student is currently taking"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="form-section">
+                        <h4>📝 Additional Information</h4>
+                        <div class="form-group">
+                            <label for="experience">Previous Robotics/Programming Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="none">No experience</option>
+                                <option value="basic">Basic (some coding games/apps)</option>
+                                <option value="intermediate">Intermediate (Scratch, basic programming)</option>
+                                <option value="advanced">Advanced (multiple programming languages)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interests">What interests your child most about robotics?</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="building">
+                                    <span>Building robots</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="programming">
+                                    <span>Programming</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="electronics">
+                                    <span>Electronics</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="ai">
+                                    <span>Artificial Intelligence</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="games">
+                                    <span>Robot games</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="goals">What do you hope your child will learn?</label>
+                            <textarea id="goals" name="goals" rows="3"
+                                placeholder="Tell us about your goals and expectations for this robotics class"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-section">
+                        <h4>📋 Terms and Conditions</h4>
+                        <div class="form-group">
+                            <label class="checkbox-label terms-checkbox">
+                                <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+                                <span>I agree to the <a href="#" onclick="showTerms()">Terms and Conditions</a> and <a
+                                        href="#" onclick="showPrivacy()">Privacy Policy</a> *</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="photoPermission" name="photoPermission">
+                                <span>I give permission for my child's photo to be used in promotional materials</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>I would like to receive updates about new classes and robotics events</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="resetForm()">Reset Form</button>
+                        <button type="submit" class="btn-primary">Submit Enrollment</button>
+                    </div>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon">🎉</div>
+                    <h3>Enrollment Submitted Successfully!</h3>
+                    <p>Thank you for enrolling your child in RoboKids Academy. We'll contact you within 24 hours to
+                        confirm your enrollment and provide next steps.</p>
+                    <button class="btn-primary" onclick="window.location.href='index.html'">Return to Home</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 RoboKids Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="enroll-script.js"></script>
+</body>
+
+</html>

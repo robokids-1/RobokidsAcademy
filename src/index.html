@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboKids Academy - Learn Robotics!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="robot-emoji">🤖</span>
+                <h1>RoboKids Academy</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="enroll.html">Enroll</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to the Future of Learning!</h2>
+                <p>Build, program, and control robots while having tons of fun!</p>
+                <button class="cta-button" onclick="scrollToSection('classes')">Start Learning</button>
+            </div>
+            <div class="hero-robot">
+                <div class="robot-animation">🤖</div>
+            </div>
+        </section>
+
+        <section id="classes" class="classes-section">
+            <h2>Our Amazing Classes</h2>
+            <div class="classes-grid">
+                <div class="class-card">
+                    <div class="class-icon">🧩</div>
+                    <h3>Beginner Builders</h3>
+                    <p>Ages 6-8</p>
+                    <ul>
+                        <li>Learn basic robot parts</li>
+                        <li>Build simple robots</li>
+                        <li>Introduction to coding</li>
+                    </ul>
+                    <button class="enroll-btn" onclick="window.location.href='enroll.html'">Enroll Now</button>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-icon">⚙️</div>
+                    <h3>Robot Engineers</h3>
+                    <p>Ages 9-12</p>
+                    <ul>
+                        <li>Advanced building techniques</li>
+                        <li>Programming with Scratch</li>
+                        <li>Sensor integration</li>
+                    </ul>
+                    <button class="enroll-btn" onclick="window.location.href='enroll.html'">Enroll Now</button>
+                </div>
+
+                <div class="class-card">
+                    <div class="class-icon">🚀</div>
+                    <h3>Future Inventors</h3>
+                    <p>Ages 13-16</p>
+                    <ul>
+                        <li>Arduino programming</li>
+                        <li>3D printing</li>
+                        <li>AI and machine learning</li>
+                    </ul>
+                    <button class="enroll-btn" onclick="window.location.href='enroll.html'">Enroll Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Cool Projects You'll Build</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">🤖</div>
+                    <h3>Dancing Robot</h3>
+                    <p>Program a robot to dance to your favorite music!</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🏠</div>
+                    <h3>Smart Home Assistant</h3>
+                    <p>Build a robot that helps around the house!</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">🎮</div>
+                    <h3>Robot Game Controller</h3>
+                    <p>Create your own gaming robot!</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Get Started Today!</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>📞 Call Us</h3>
+                    <p>(555) ROBOT-01</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p>hello@robokids.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Visit</h3>
+                    <p>123 Robot Street, Tech City</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 RoboKids Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
