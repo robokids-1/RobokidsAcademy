@@ -1,79 +1,146 @@
 /* Enrollment Page Specific Styles */
 
+:root {
+    /* Modern Color Palette */
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #818cf8;
+    --secondary: #8b5cf6;
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+
+    /* Neutral Colors */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --bg-white: #ffffff;
+    --bg-light: #f9fafb;
+    --bg-gray: #f3f4f6;
+    --border: #e5e7eb;
+    --border-light: #f3f4f6;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+    /* Typography */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Active nav link */
 .nav-links .active {
-    color: #ffd700 !important;
-    font-weight: bold;
+    color: var(--primary) !important;
+    font-weight: 600;
 }
 
 /* Enroll Hero Section */
 .enroll-hero {
-    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
     color: white;
-    padding: 8rem 2rem 4rem;
+    padding: 10rem 2rem 5rem;
     text-align: center;
     min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.enroll-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.enroll-hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .enroll-hero-content h2 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #ffd700;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: white;
+    letter-spacing: -0.03em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .enroll-hero-content p {
-    font-size: 1.2rem;
-    max-width: 600px;
+    font-size: 1.25rem;
+    max-width: 700px;
     margin: 0 auto;
+    opacity: 0.95;
+    font-weight: 400;
+    line-height: 1.7;
 }
 
 /* Form Container */
 .enrollment-form-section {
-    padding: 4rem 2rem;
-    background: #f8f9fa;
+    padding: var(--spacing-2xl) 2rem;
+    background: var(--bg-light);
     min-height: 100vh;
 }
 
 .form-container {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: var(--bg-white);
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
     overflow: hidden;
+    border: 1px solid var(--border-light);
 }
 
 .form-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     color: white;
-    padding: 2rem;
+    padding: 3rem 2.5rem;
     text-align: center;
 }
 
 .form-header h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
 }
 
 .form-header p {
     font-size: 1.1rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    font-weight: 400;
 }
 
 /* Form Styles */
 .enrollment-form {
-    padding: 2rem;
+    padding: 2.5rem;
 }
 
 .form-section {
     margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 2.5rem;
+    border-bottom: 2px solid var(--border-light);
 }
 
 .form-section:last-of-type {
@@ -81,20 +148,22 @@
 }
 
 .form-section h4 {
-    font-family: 'Fredoka One', cursive;
-    color: #667eea;
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    letter-spacing: -0.02em;
 }
 
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .form-group {
@@ -104,170 +173,206 @@
 .form-group label {
     display: block;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.625rem;
     font-size: 0.95rem;
+    font-family: var(--font-body);
+    letter-spacing: -0.01em;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
     font-size: 1rem;
-    transition: all 0.3s;
-    font-family: 'Open Sans', sans-serif;
+    transition: all var(--transition-base);
+    font-family: var(--font-body);
+    background: var(--bg-white);
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
     transform: translateY(-1px);
 }
 
-.form-group input:required:invalid {
-    border-color: #ff6b6b;
+.form-group input:required:invalid:not(:placeholder-shown) {
+    border-color: var(--error);
 }
 
-.form-group input:required:valid {
-    border-color: #4ecdc4;
+.form-group input:required:valid:not(:placeholder-shown) {
+    border-color: var(--success);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: var(--font-body);
 }
 
 /* Checkbox Styles */
 .checkbox-group {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 0.8rem;
-    margin-top: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 0.75rem;
 }
 
 .checkbox-label {
     display: flex !important;
     align-items: center;
-    gap: 0.5rem;
-    font-weight: normal !important;
+    gap: 0.75rem;
+    font-weight: 500 !important;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+    padding: 0.875rem;
+    border-radius: 10px;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+    font-size: 0.95rem;
 }
 
 .checkbox-label:hover {
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
+    border-color: var(--border);
 }
 
 .checkbox-label input[type="checkbox"] {
     width: auto !important;
     margin: 0;
     transform: scale(1.2);
+    cursor: pointer;
+    accent-color: var(--primary);
 }
 
 .terms-checkbox {
-    background-color: #fff3cd;
-    border: 1px solid #ffeaa7;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    background-color: #fef3c7;
+    border: 2px solid #fde68a;
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 0.75rem;
 }
 
 .terms-checkbox a {
-    color: #667eea;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 600;
+    transition: color var(--transition-fast);
 }
 
 .terms-checkbox a:hover {
+    color: var(--primary-dark);
     text-decoration: underline;
 }
 
 /* Form Actions */
 .form-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 2px solid #f0f0f0;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid var(--border-light);
 }
 
 .btn-primary,
 .btn-secondary {
-    padding: 1rem 2rem;
+    padding: 1rem 2.5rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
-    min-width: 150px;
+    transition: all var(--transition-base);
+    min-width: 160px;
+    font-family: var(--font-body);
+    letter-spacing: -0.01em;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
     color: white;
+    box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 .btn-secondary {
-    background: #f8f9fa;
-    color: #666;
-    border: 2px solid #e0e0e0;
+    background: var(--bg-white);
+    color: var(--text-secondary);
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover {
-    background: #e9ecef;
+    background: var(--bg-light);
     transform: translateY(-1px);
+    border-color: var(--text-light);
+    box-shadow: var(--shadow);
 }
 
 /* Success Message */
 .success-message {
     text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    padding: 4rem 2.5rem;
+    background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
     color: white;
-    border-radius: 20px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
 }
 
 .success-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
     animation: bounce 1s infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 .success-message h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
 }
 
 .success-message p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    line-height: 1.7;
 }
 
 /* Error Message */
 .error-message {
     text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    padding: 4rem 2.5rem;
+    background: linear-gradient(135deg, var(--error) 0%, #dc2626 100%);
     color: white;
-    border-radius: 20px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-xl);
 }
 
 .error-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
     animation: shake 0.5s;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 @keyframes shake {
@@ -287,30 +392,34 @@
 }
 
 .error-message h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
 }
 
 .error-message p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    line-height: 1.7;
 }
 
 .error-message a {
     color: white;
     text-decoration: underline;
     font-weight: 600;
+    transition: opacity var(--transition-fast);
 }
 
 .error-message a:hover {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .error-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -318,15 +427,16 @@
 .error-actions .btn-primary,
 .error-actions .btn-secondary {
     background: white;
-    color: #ff6b6b;
+    color: var(--error);
     border: 2px solid white;
+    box-shadow: var(--shadow-md);
 }
 
 .error-actions .btn-primary:hover,
 .error-actions .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-lg);
 }
 
 .error-actions .btn-secondary {
@@ -336,13 +446,21 @@
 }
 
 .error-actions .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .enroll-hero {
+        padding: 8rem 1.5rem 4rem;
+    }
+
     .enroll-hero-content h2 {
-        font-size: 2rem;
+        font-size: 2.25rem;
+    }
+
+    .enroll-hero-content p {
+        font-size: 1.1rem;
     }
 
     .form-row {
@@ -355,52 +473,66 @@
 
     .form-actions {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .btn-primary,
     .btn-secondary {
         width: 100%;
-        max-width: 300px;
+        max-width: none;
     }
 
     .enrollment-form {
-        padding: 1rem;
+        padding: 2rem 1.5rem;
     }
 
     .form-container {
         margin: 0 1rem;
     }
+
+    .form-header {
+        padding: 2.5rem 2rem;
+    }
 }
 
 @media (max-width: 480px) {
     .enroll-hero {
-        padding: 6rem 1rem 2rem;
+        padding: 7rem 1rem 3rem;
+        min-height: 40vh;
     }
 
     .enrollment-form-section {
-        padding: 2rem 0;
+        padding: var(--spacing-xl) 0;
     }
 
     .form-container {
         margin: 0;
         border-radius: 0;
     }
+
+    .enrollment-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-header {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* Form Validation Styles */
-.form-group input:invalid {
-    border-color: #ff6b6b;
+.form-group input:invalid:not(:placeholder-shown) {
+    border-color: var(--error);
 }
 
-.form-group input:valid {
-    border-color: #4ecdc4;
+.form-group input:valid:not(:placeholder-shown) {
+    border-color: var(--success);
 }
 
 /* Loading Animation */
 .loading {
     position: relative;
     pointer-events: none;
+    opacity: 0.7;
 }
 
 .loading::after {
@@ -408,13 +540,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20px;
-    height: 20px;
-    margin: -10px 0 0 -10px;
-    border: 2px solid #ffffff;
-    border-top: 2px solid transparent;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
