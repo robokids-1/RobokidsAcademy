@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', addRobotSounds);
 function initSlideshow() {
     const slides = document.querySelectorAll('.slide');
 
-    // Only initialize if slides exist (slideshow is only on index.html, not enroll.html)
+    // Only initialize if slides exist (slideshow is only on index.html, not enquiry.html)
     if (slides.length === 0) {
         return;
     }

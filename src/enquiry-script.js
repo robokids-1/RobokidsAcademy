@@ -281,7 +281,6 @@ function formatEmailBody(data) {
     // Permissions
     body += `PERMISSIONS\n`;
     body += `-----------\n`;
-    body += `Photo Permission: ${data.photoPermission ? 'Yes' : 'No'}\n`;
     body += `Newsletter Subscription: ${data.newsletter ? 'Yes' : 'No'}\n`;
     body += `Terms Accepted: Yes\n`;
     body += `\n`;
