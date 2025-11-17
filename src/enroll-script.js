@@ -52,10 +52,15 @@ function validateForm() {
     const requiredFields = enrollmentForm.querySelectorAll('[required]');
     let isValid = true;
 
+    // Get CSS variable values for consistent theming
+    const rootStyles = getComputedStyle(document.documentElement);
+    const errorColor = rootStyles.getPropertyValue('--error').trim();
+    const successColor = rootStyles.getPropertyValue('--success').trim();
+
     requiredFields.forEach(field => {
         if (!field.value.trim()) {
             isValid = false;
-            field.style.borderColor = '#ff4444';
+            field.style.borderColor = errorColor;
 
             // Reset border color after 2 seconds
             setTimeout(() => {
@@ -72,7 +77,7 @@ function validateForm() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(emailField.value)) {
             isValid = false;
-            emailField.style.borderColor = '#ff4444';
+            emailField.style.borderColor = errorColor;
             alert('Please enter a valid email address');
             setTimeout(() => {
                 emailField.style.borderColor = '';
@@ -86,7 +91,7 @@ function validateForm() {
         const phoneDigits = phoneField.value.replace(/\D/g, '');
         if (phoneDigits.length < 10) {
             isValid = false;
-            phoneField.style.borderColor = '#ff4444';
+            phoneField.style.borderColor = errorColor;
             alert('Please enter a valid phone number (numbers only, at least 10 digits)');
             setTimeout(() => {
                 phoneField.style.borderColor = '';
@@ -100,7 +105,7 @@ function validateForm() {
         const age = parseInt(ageField.value);
         if (age < 6 || age > 16) {
             isValid = false;
-            ageField.style.borderColor = '#ff4444';
+            ageField.style.borderColor = errorColor;
             alert('Student age must be between 6 and 16 years');
             setTimeout(() => {
                 ageField.style.borderColor = '';
@@ -396,9 +401,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Add validation feedback
+        const rootStyles = getComputedStyle(document.documentElement);
+        const successColor = rootStyles.getPropertyValue('--success').trim();
+
         field.addEventListener('input', function () {
             if (this.hasAttribute('required') && this.value.trim()) {
-                this.style.borderColor = '#4CAF50';
+                this.style.borderColor = successColor;
             } else if (this.hasAttribute('required')) {
                 this.style.borderColor = '';
             }

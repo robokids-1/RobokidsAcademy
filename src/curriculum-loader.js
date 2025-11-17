@@ -163,12 +163,17 @@ async function loadCurriculum(filePath, modalId, title, closeFunctionName) {
             errorMessage = 'Unable to load curriculum file. Please ensure you are running the site from a web server (not file://). If testing locally, use: python -m http.server 8000';
         }
 
+        // Get CSS variable values
+        const rootStyles = getComputedStyle(document.documentElement);
+        const errorColor = rootStyles.getPropertyValue('--error').trim();
+        const textSecondary = rootStyles.getPropertyValue('--text-secondary').trim();
+
         contentDiv.innerHTML = `
-            <div style="text-align: center; padding: 2rem; color: #ff6b6b;">
+            <div style="text-align: center; padding: 2rem; color: ${errorColor};">
                 <p style="font-size: 1.2rem; margin-bottom: 1rem;">⚠️ Error loading curriculum</p>
                 <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">${errorMessage}</p>
-                <p style="font-size: 0.8rem; color: #666; margin-top: 1rem;">File: ${filePath}</p>
-                <p style="font-size: 0.8rem; color: #666;">Please check the browser console for more details.</p>
+                <p style="font-size: 0.8rem; color: ${textSecondary}; margin-top: 1rem;">File: ${filePath}</p>
+                <p style="font-size: 0.8rem; color: ${textSecondary};">Please check the browser console for more details.</p>
             </div>
         `;
     }
