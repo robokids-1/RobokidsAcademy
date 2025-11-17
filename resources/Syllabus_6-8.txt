@@ -1,0 +1,78 @@
+Robotics Syllabus
+1. Introduction to Robots and Technology
+Topics Covered:
+* What is a robot?
+* Robots in everyday life (vacuum robots, toy robots, Mars rovers)
+* Basic safety rules in the classroom
+Hands-On Project:
+* Robot Show & Tell: Bring or draw a picture of a robot and explain what it does.
+________________
+
+
+2. Exploring Simple Machines and Movements
+Topics Covered:
+* Wheels and axles, levers, and gears
+* How simple machines help robots move
+* Building with blocks and connectors
+Hands-On Project:
+* Make a Rolling Car: Build a simple car with wheels using LEGO, K'nex, or similar kits.
+________________
+
+
+3. Building Basic Robots (No Coding)
+Topics Covered:
+* Assembling robot parts (head, body, arms, wheels)
+* Understanding buttons and switches
+* Introduction to battery-powered toys and robots
+Hands-On Project:
+* Create a Bristlebot: Make a tiny robot using a toothbrush head, motor, and battery that wiggles across the table.
+________________
+
+
+4. Introduction to Sensors
+Topics Covered:
+* What are sensors?
+* How robots "see" or "feel" (light, touch, sound)
+* Simple games to demonstrate sensing (e.g., clap to turn on the light)
+Hands-On Project:
+* Sound-Activated Robot Toy: Use a toy or kit that responds to clapping or loud noises.
+________________
+
+
+5. Introduction to Coding with Makeblock Codey Rocky
+Topics Covered:
+* What is coding? Basic concepts using block programming
+* Exploring Codey Rocky's sensors and lights
+* Programming simple movements and sounds with Codey Rocky using Makeblock's mBlock app
+Hands-On Project:
+* Codey Rocky Dance: Program Codey Rocky to perform a fun dance with lights and sounds using block coding.
+________________
+
+
+6. Programmable Floor Robots (e.g., Bee-Bot)
+Topics Covered:
+* Giving instructions to robots (forward, backward, turn)
+* Simple programming concepts (commands, order)
+* Problem-solving with robots
+Hands-On Project:
+* Maze Challenge: Program a Bee-Bot or similar robot to navigate a simple floor maze.
+________________
+
+
+7. Creative Robot Design
+Topics Covered:
+* Imaginative thinking: What could robots do in the future?
+* Drawing and building creative robot models
+* Using craft materials to decorate robots
+Hands-On Project:
+* Design Your Own Robot: Draw or build a robot out of recycled materials and explain its special job.
+________________
+
+
+8. Mini-Showcase and Parent Day
+Topics Covered:
+* Sharing what was learned
+* Presenting favorite projects
+* Celebrating creativity and teamwork
+Hands-On Project:
+* Robot Parade: Display robots and drawings; each child presents their favorite project to the group and parents.

@@ -234,11 +234,54 @@ function closeCurriculum() {
     }
 }
 
+// Beginner Builders Curriculum Modal Functions
+function openBeginnerCurriculum() {
+    const modal = document.getElementById('beginnerCurriculumModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeBeginnerCurriculum() {
+    const modal = document.getElementById('beginnerCurriculumModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// Future Inventors Curriculum Modal Functions
+function openFutureCurriculum() {
+    const modal = document.getElementById('futureCurriculumModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeFutureCurriculum() {
+    const modal = document.getElementById('futureCurriculumModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
 // Close modal when clicking outside of it
 window.onclick = function (event) {
-    const modal = document.getElementById('curriculumModal');
-    if (event.target === modal) {
+    const curriculumModal = document.getElementById('curriculumModal');
+    const beginnerModal = document.getElementById('beginnerCurriculumModal');
+    const futureModal = document.getElementById('futureCurriculumModal');
+
+    if (event.target === curriculumModal) {
         closeCurriculum();
+    }
+    if (event.target === beginnerModal) {
+        closeBeginnerCurriculum();
+    }
+    if (event.target === futureModal) {
+        closeFutureCurriculum();
     }
 }
 
@@ -246,5 +289,7 @@ window.onclick = function (event) {
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         closeCurriculum();
+        closeBeginnerCurriculum();
+        closeFutureCurriculum();
     }
 });
