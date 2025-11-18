@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, observerOptions);
 
     // Observe all cards
-    const cards = document.querySelectorAll('.class-card, .project-card, .contact-card');
+    const cards = document.querySelectorAll('.class-card, .project-card, .testimonial-card, .contact-card');
     cards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';

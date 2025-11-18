@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Our Students in Action - RoboKids Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .video-page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 10rem 2rem 5rem;
+            text-align: center;
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .video-page-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-page-hero-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+            letter-spacing: -0.03em;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-page-hero-content p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .video-page-section {
+            padding: var(--spacing-2xl) 2rem;
+            background: var(--bg-light);
+            min-height: 100vh;
+        }
+
+        .video-page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+        }
+
+        .video-page-container h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .video-description {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .video-description p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .video-page-hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .video-page-container {
+                padding: 1.5rem;
+            }
+
+            .video-wrapper {
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-page-hero {
+                padding: 7rem 1rem 3rem;
+                min-height: 30vh;
+            }
+
+            .video-page-section {
+                padding: var(--spacing-xl) 1rem;
+            }
+
+            .video-page-container {
+                padding: 1rem;
+                border-radius: 16px;
+            }
+
+            .video-wrapper {
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="robot-emoji">🤖</span>
+                    <h1>RoboKids Academy</h1>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#classes">Classes</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="video-page-hero">
+            <div class="video-page-hero-content">
+                <h2>See Our Students in Action! 🎬</h2>
+                <p>Watch our amazing students build, program, and showcase their robotics projects</p>
+            </div>
+        </section>
+
+        <section class="video-page-section">
+            <div class="video-page-container">
+                <h3>Student Robotics Projects</h3>
+                <div class="video-wrapper">
+                    <video controls playsinline>
+                        <source src="videos/mbot2FollowLine.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-description">
+                    <p>Watch our talented students demonstrate their robotics skills! This video showcases students
+                        working with mBot2 robots, programming them to follow lines and navigate obstacles. Our hands-on
+                        approach to learning robotics helps students develop critical thinking, problem-solving, and
+                        programming skills while having fun!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RoboKids Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Testimonial - RoboKids Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="testimonial-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="robot-emoji">🤖</span>
+                    <h1>RoboKids Academy</h1>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#classes">Classes</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="testimonial-hero">
+            <div class="testimonial-hero-content">
+                <h2>Share Your Experience! ⭐</h2>
+                <p>We'd love to hear about your journey with RoboKids Academy. Your feedback helps us improve and
+                    inspires other families!</p>
+            </div>
+        </section>
+
+        <section class="testimonial-form-section">
+            <div class="form-container">
+                <div class="form-header">
+                    <h3>Testimonial Submission</h3>
+                    <p>Please share your experience with RoboKids Academy. All fields marked with * are required.</p>
+                </div>
+
+                <form id="testimonialForm" class="testimonial-form">
+                    <!-- Your Information -->
+                    <div class="form-section">
+                        <h4>👤 Your Information</h4>
+                        <div class="form-group">
+                            <label for="relationship">I am a *</label>
+                            <select id="relationship" name="relationship" required onchange="toggleStudentFields()">
+                                <option value="">Select one</option>
+                                <option value="parent">Parent/Guardian</option>
+                                <option value="student">Student</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yourFirstName">Your First Name *</label>
+                                <input type="text" id="yourFirstName" name="yourFirstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="yourLastName">Your Last Name *</label>
+                                <input type="text" id="yourLastName" name="yourLastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="studentInfoGroup" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="studentName">Student's Name *</label>
+                                    <input type="text" id="studentName" name="studentName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="studentAge">Student's Age *</label>
+                                    <input type="number" id="studentAge" name="studentAge" min="6" max="16">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required
+                                placeholder="We'll only use this to confirm your submission">
+                        </div>
+                    </div>
+
+                    <!-- Program Information -->
+                    <div class="form-section">
+                        <h4>📚 Program Information</h4>
+                        <div class="form-group">
+                            <label for="programAttended">Which program did you/your child attend? *</label>
+                            <select id="programAttended" name="programAttended" required>
+                                <option value="">Select a Program</option>
+                                <option value="beginner">🧩 Beginner Builders (Ages 6-8)</option>
+                                <option value="engineer">⚙️ Robot Engineers (Ages 9-12)</option>
+                                <option value="inventor">🚀 Future Inventors (Ages 13-16)</option>
+                                <option value="multiple">Multiple Programs</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rating">Rating *</label>
+                            <div class="rating-group" role="radiogroup" aria-label="Rating">
+                                <input type="radio" id="rating1" name="rating" value="1" required>
+                                <label for="rating1" class="rating-label" aria-label="1 star">⭐</label>
+                                <input type="radio" id="rating2" name="rating" value="2" required>
+                                <label for="rating2" class="rating-label" aria-label="2 stars">⭐</label>
+                                <input type="radio" id="rating3" name="rating" value="3" required>
+                                <label for="rating3" class="rating-label" aria-label="3 stars">⭐</label>
+                                <input type="radio" id="rating4" name="rating" value="4" required>
+                                <label for="rating4" class="rating-label" aria-label="4 stars">⭐</label>
+                                <input type="radio" id="rating5" name="rating" value="5" required>
+                                <label for="rating5" class="rating-label" aria-label="5 stars">⭐</label>
+                            </div>
+                            <small class="form-hint">Click a star to rate (1 = Poor, 5 = Excellent)</small>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Content -->
+                    <div class="form-section">
+                        <h4>💬 Your Testimonial</h4>
+                        <div class="form-group">
+                            <label for="testimonialText">Share your experience *</label>
+                            <textarea id="testimonialText" name="testimonialText" rows="6" required
+                                placeholder="Tell us what you loved about RoboKids Academy, what your child learned, or how the program impacted them. Be as detailed as you'd like!"></textarea>
+                            <small class="form-hint">Minimum 50 characters. Your testimonial may be edited for length
+                                and clarity before being published.</small>
+                        </div>
+                    </div>
+
+                    <!-- Additional Options -->
+                    <div class="form-section">
+                        <h4>📋 Additional Options</h4>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="photoPermission" name="photoPermission">
+                                <span>I give permission for my/my child's photo to be used in promotional
+                                    materials</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="displayName" name="displayName" checked>
+                                <span>Display my full name on the website (uncheck to display as "Parent of [Student
+                                    Name]" or "Student, Age [X]")</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="resetForm()">Reset Form</button>
+                        <button type="submit" class="btn-primary">Submit Testimonial</button>
+                    </div>
+                </form>
+
+                <!-- Success Message (hidden by default) -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-icon">🎉</div>
+                    <h3>Testimonial Submitted Successfully!</h3>
+                    <p>Thank you for sharing your experience with RoboKids Academy! We truly appreciate your feedback.
+                        Your testimonial will be reviewed and may be featured on our website.</p>
+                    <button class="btn-primary" onclick="window.location.href='index.html#testimonials'">View
+                        Testimonials</button>
+                </div>
+
+                <!-- Error Message (hidden by default) -->
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Testimonial Submission Failed</h3>
+                    <p>We're sorry, but there was an error sending your testimonial. Please try again or contact us
+                        directly at <a href="mailto:robokids209@gmail.com">robokids209@gmail.com</a>.</p>
+                    <div class="error-actions">
+                        <button class="btn-secondary" onclick="retrySubmission()">Try Again</button>
+                        <button class="btn-primary" onclick="window.location.href='index.html'">Return to Home</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 RoboKids Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <script src="testimonial-script.js"></script>
+</body>
+
+</html>
