@@ -29,7 +29,7 @@
     --bg-gray: #f3f4f6;
     --border: #e5e7eb;
     --border-light: #f3f4f6;
-    
+
     /* Gradient Colors */
     --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
     --gradient-hero: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
@@ -275,6 +275,7 @@ nav {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -602,13 +603,17 @@ nav {
     overflow: hidden;
     height: 100%;
     background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    display: flex;
+    flex-direction: column;
 }
 
 .class-link {
     text-decoration: none;
     color: inherit;
     display: block;
-    height: 100%;
+    flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .class-card::before {
@@ -633,6 +638,8 @@ nav {
     background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .class-card:hover {
@@ -692,8 +699,18 @@ nav {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.02em;
+}
+
+.class-card .class-age {
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
 }
 
 .class-card p {
@@ -710,6 +727,44 @@ nav {
     font-size: 1rem;
 }
 
+.class-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.class-actions .curriculum-btn {
+    width: 100%;
+    max-width: 280px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    z-index: 11;
+}
+
+.class-actions .explore-link {
+    margin-top: 0;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.5rem 1rem;
+}
+
+.class-actions .explore-link:hover {
+    color: var(--primary-dark);
+    gap: 0.75rem;
+}
+
 .enroll-btn,
 .curriculum-btn {
     color: white;
@@ -722,6 +777,9 @@ nav {
     transition: all var(--transition-base);
     font-family: var(--font-body);
     letter-spacing: -0.01em;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
 
 .enroll-btn {
@@ -733,6 +791,7 @@ nav {
     background: linear-gradient(135deg, var(--accent-hover) 0%, var(--accent) 100%);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    text-decoration: none;
 }
 
 .curriculum-btn {
@@ -744,6 +803,7 @@ nav {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    text-decoration: none;
 }
 
 /* Projects Section */
@@ -1099,6 +1159,39 @@ nav {
     color: var(--text-light);
     margin: 0;
     font-weight: 500;
+}
+
+.testimonials-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+}
+
+.testimonial-share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary, #6366f1) 0%, var(--primary-dark, #4f46e5) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.testimonial-share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    text-decoration: none;
+    color: white;
+}
+
+.testimonial-share-btn::before {
+    content: '⭐';
+    font-size: 1.2rem;
 }
 
 /* Features Section */
@@ -1600,7 +1693,7 @@ footer {
         font-size: 2.25rem;
         gap: 0.4rem;
     }
-    
+
     .hero-title-main,
     .hero-title-sub,
     .hero-title-highlight {

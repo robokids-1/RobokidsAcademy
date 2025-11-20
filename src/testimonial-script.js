@@ -374,7 +374,7 @@ function formatEmailBody(data) {
     body += `-------------------\n`;
     const programNames = {
         'beginner': '🧩 Beginner Builders (Ages 6-8)',
-        'engineer': '⚙️ Robot Engineers (Ages 9-12)',
+        'engineer': '⚙️ Robotics Engineers (Ages 9-12)',
         'inventor': '🚀 Future Inventors (Ages 13-16)',
         'multiple': 'Multiple Programs'
     };

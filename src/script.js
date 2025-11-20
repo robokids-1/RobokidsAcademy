@@ -79,6 +79,27 @@ document.addEventListener('DOMContentLoaded', function () {
             this.style.transform = 'scale(1)';
         });
     });
+
+    // Add event listeners to curriculum buttons as backup
+    const curriculumButtons = document.querySelectorAll('.curriculum-btn');
+    curriculumButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const onclick = btn.getAttribute('onclick');
+            if (onclick) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Curriculum button clicked via event listener:', onclick);
+                // Execute the onclick function
+                if (onclick.includes('openBeginnerCurriculum')) {
+                    window.openBeginnerCurriculum();
+                } else if (onclick.includes('openCurriculum')) {
+                    window.openCurriculum();
+                } else if (onclick.includes('openFutureCurriculum')) {
+                    window.openFutureCurriculum();
+                }
+            }
+        });
+    });
 });
 
 // Add some fun interactive features
@@ -218,15 +239,19 @@ window.addEventListener('hashchange', function () {
 });
 
 // Curriculum Modal Functions
-function openCurriculum() {
+window.openCurriculum = function() {
+    console.log('openCurriculum called');
     const modal = document.getElementById('curriculumModal');
     if (modal) {
+        console.log('Modal found, displaying...');
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+        console.error('curriculumModal not found!');
     }
 }
 
-function closeCurriculum() {
+window.closeCurriculum = function() {
     const modal = document.getElementById('curriculumModal');
     if (modal) {
         modal.style.display = 'none';
@@ -235,15 +260,19 @@ function closeCurriculum() {
 }
 
 // Beginner Builders Curriculum Modal Functions
-function openBeginnerCurriculum() {
+window.openBeginnerCurriculum = function() {
+    console.log('openBeginnerCurriculum called');
     const modal = document.getElementById('beginnerCurriculumModal');
     if (modal) {
+        console.log('Modal found, displaying...');
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+        console.error('beginnerCurriculumModal not found!');
     }
 }
 
-function closeBeginnerCurriculum() {
+window.closeBeginnerCurriculum = function() {
     const modal = document.getElementById('beginnerCurriculumModal');
     if (modal) {
         modal.style.display = 'none';
@@ -252,15 +281,19 @@ function closeBeginnerCurriculum() {
 }
 
 // Future Inventors Curriculum Modal Functions
-function openFutureCurriculum() {
+window.openFutureCurriculum = function() {
+    console.log('openFutureCurriculum called');
     const modal = document.getElementById('futureCurriculumModal');
     if (modal) {
+        console.log('Modal found, displaying...');
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+        console.error('futureCurriculumModal not found!');
     }
 }
 
-function closeFutureCurriculum() {
+window.closeFutureCurriculum = function() {
     const modal = document.getElementById('futureCurriculumModal');
     if (modal) {
         modal.style.display = 'none';

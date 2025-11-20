@@ -181,13 +181,17 @@ async function loadCurriculum(filePath, modalId, title, closeFunctionName) {
 
 // Load all curricula when page loads
 document.addEventListener('DOMContentLoaded', function () {
-    // Load Beginner Builders curriculum (Ages 6-8)
-    loadCurriculum('resources/Syllabus_6-8.txt', 'beginnerCurriculumModal', 'Beginner Builders Curriculum', 'closeBeginnerCurriculum');
+    // Server is running from src/ directory, so use resources/ (not src/resources/)
+    const basePath = 'resources/';
 
-    // Load Robot Engineers curriculum (Ages 9-12)
-    loadCurriculum('resources/Syllabus_9-12.txt', 'curriculumModal', 'Robot Engineers Curriculum', 'closeCurriculum');
+    // Load Beginner Builders curriculum (Ages 6-8)
+    loadCurriculum(basePath + 'curriculum_6-8.txt', 'beginnerCurriculumModal', 'Beginner Builders Curriculum', 'closeBeginnerCurriculum');
+
+    // Load Robotics Engineers curriculum (Ages 9-12)
+    loadCurriculum(basePath + 'curriculum_9-12.txt', 'curriculumModal', 'Robotics Engineers Curriculum', 'closeCurriculum');
 
     // Load Future Inventors curriculum (Ages 13-16)
-    loadCurriculum('resources/Syllabus_13-16.txt', 'futureCurriculumModal', 'Future Inventors Curriculum', 'closeFutureCurriculum');
+    // Note: File has typo in name - currlculum instead of cirriculum
+    loadCurriculum(basePath + 'currlculum_13-16.txt', 'futureCurriculumModal', 'Future Inventors Curriculum', 'closeFutureCurriculum');
 });
 
