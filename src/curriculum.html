@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum - RoboKids Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .curriculum-page {
+            min-height: 100vh;
+            background: var(--bg-light);
+            padding-top: 100px;
+            padding-bottom: 4rem;
+        }
+
+        .curriculum-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .curriculum-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .curriculum-header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .curriculum-header .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .curriculum-header .back-link:hover {
+            color: var(--primary-dark);
+            gap: 0.75rem;
+        }
+
+        .curriculum-content {
+            background: var(--bg-white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .curriculum-module {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .curriculum-module:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .curriculum-module h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .curriculum-module h4 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .curriculum-module ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .curriculum-module ul li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .curriculum-module ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .project-box {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(99, 102, 241, 0.05) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .project-box strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-family: var(--font-heading);
+        }
+
+        .project-box p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .loading-message,
+        .error-message {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .loading-message p,
+        .error-message p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .error-message {
+            color: var(--error);
+        }
+
+        @media (max-width: 768px) {
+            .curriculum-container {
+                padding: 1rem;
+            }
+
+            .curriculum-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .curriculum-module h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <span class="robot-emoji">🤖</span>
+                    <h1>RoboKids Academy</h1>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#classes">Programs</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="curriculum-page">
+        <div class="curriculum-container">
+            <div class="curriculum-header">
+                <a href="index.html#classes" class="back-link">← Back to Programs</a>
+                <h1 id="curriculumTitle">Loading Curriculum...</h1>
+            </div>
+            <div class="curriculum-content">
+                <div id="curriculumContent" class="loading-message">
+                    <p>Loading curriculum...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 RoboKids Academy. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script src="curriculum-loader.js"></script>
+    <script>
+        // Get curriculum type from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const curriculumType = urlParams.get('type') || 'beginner';
+
+        // Map curriculum types to file paths and titles
+        const curriculumConfig = {
+            'beginner': {
+                file: 'resources/curriculum_6-8.txt',
+                title: '📚 Beginner Builders Curriculum (Ages 6-8)'
+            },
+            'engineer': {
+                file: 'resources/curriculum_9-12.txt',
+                title: '📚 Robotics Engineers Curriculum (Ages 9-12)'
+            },
+            'inventor': {
+                file: 'resources/cirriculum_13-16.txt',
+                title: '📚 Future Inventors Curriculum (Ages 13-16)'
+            }
+        };
+
+        // Load curriculum when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            const config = curriculumConfig[curriculumType];
+            
+            if (!config) {
+                document.getElementById('curriculumTitle').textContent = 'Curriculum Not Found';
+                document.getElementById('curriculumContent').innerHTML = '<div class="error-message"><p>Invalid curriculum type. Please select a valid program.</p></div>';
+                return;
+            }
+
+            // Set title
+            document.getElementById('curriculumTitle').textContent = config.title;
+
+            // Load curriculum
+            loadCurriculumForPage(config.file, config.title);
+        });
+
+        // Modified loadCurriculum function for page display
+        async function loadCurriculumForPage(filePath, title) {
+            const contentDiv = document.getElementById('curriculumContent');
+
+            try {
+                const response = await fetch(filePath, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'text/plain',
+                    },
+                    cache: 'no-cache'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const text = await response.text();
+
+                if (!text || text.trim().length === 0) {
+                    throw new Error('Curriculum file is empty');
+                }
+
+                const curriculum = parseSyllabus(text, title);
+
+                if (!curriculum.modules || curriculum.modules.length === 0) {
+                    throw new Error('No curriculum modules found in file');
+                }
+
+                // Generate and insert HTML
+                const modulesHTML = curriculum.modules.map(module => generateModuleHTML(module)).join('\n');
+                contentDiv.innerHTML = modulesHTML;
+
+            } catch (error) {
+                console.error(`Error loading curriculum from ${filePath}:`, error);
+
+                let errorMessage = error.message || 'Unknown error';
+
+                if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+                    errorMessage = 'Unable to load curriculum file. Please ensure you are running the site from a web server (not file://). If testing locally, use: python -m http.server 8000';
+                }
+
+                const rootStyles = getComputedStyle(document.documentElement);
+                const errorColor = rootStyles.getPropertyValue('--error').trim();
+                const textSecondary = rootStyles.getPropertyValue('--text-secondary').trim();
+
+                contentDiv.innerHTML = `
+                    <div class="error-message">
+                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">⚠️ Error loading curriculum</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">${errorMessage}</p>
+                        <p style="font-size: 0.8rem; color: ${textSecondary}; margin-top: 1rem;">File: ${filePath}</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
