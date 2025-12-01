@@ -1,0 +1,35 @@
+HOW TO START THE LOCAL SERVER:
+================================
+
+METHOD 1 - Using Python (Recommended):
+1. Open Command Prompt or PowerShell
+2. Navigate to this folder:
+   cd C:\Projects\Robokidswebsite\RobokidsAcademy\src
+3. Run:
+   python -m http.server 8001
+4. Open browser to: http://localhost:8001
+
+METHOD 2 - Using Node.js (if Python doesn't work):
+1. Open Command Prompt or PowerShell
+2. Navigate to this folder:
+   cd C:\Projects\Robokidswebsite\RobokidsAcademy\src
+3. Run:
+   npx http-server -p 8001
+4. Open browser to: http://localhost:8001
+
+METHOD 3 - Using VS Code Live Server:
+1. Install "Live Server" extension in VS Code
+2. Right-click on index.html
+3. Select "Open with Live Server"
+
+METHOD 4 - Direct File Open (Limited functionality):
+1. Navigate to: C:\Projects\Robokidswebsite\RobokidsAcademy\src
+2. Double-click index.html
+   Note: Some features may not work with file:// protocol
+
+TROUBLESHOOTING:
+- If port 8001 is busy, try port 8002, 8003, etc.
+- Make sure Python is installed: python --version
+- Check Windows Firewall settings
+- Try running as Administrator
+

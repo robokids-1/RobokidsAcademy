@@ -259,7 +259,7 @@ window.closeCurriculum = function() {
     }
 }
 
-// Beginner Builders Curriculum Modal Functions
+// X-Bots Beginners Curriculum Modal Functions
 window.openBeginnerCurriculum = function() {
     console.log('openBeginnerCurriculum called');
     const modal = document.getElementById('beginnerCurriculumModal');
@@ -280,7 +280,7 @@ window.closeBeginnerCurriculum = function() {
     }
 }
 
-// Future Inventors Curriculum Modal Functions
+// X-Innovators Curriculum Modal Functions
 window.openFutureCurriculum = function() {
     console.log('openFutureCurriculum called');
     const modal = document.getElementById('futureCurriculumModal');
@@ -295,6 +295,27 @@ window.openFutureCurriculum = function() {
 
 window.closeFutureCurriculum = function() {
     const modal = document.getElementById('futureCurriculumModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// X-Engineers Curriculum Modal Functions
+window.openEngineersCurriculum = function() {
+    console.log('openEngineersCurriculum called');
+    const modal = document.getElementById('engineersCurriculumModal');
+    if (modal) {
+        console.log('Modal found, displaying...');
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    } else {
+        console.error('engineersCurriculumModal not found!');
+    }
+}
+
+window.closeEngineersCurriculum = function() {
+    const modal = document.getElementById('engineersCurriculumModal');
     if (modal) {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto'; // Restore scrolling

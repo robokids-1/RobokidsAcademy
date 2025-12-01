@@ -587,14 +587,14 @@ nav {
 
 .classes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
 }
 
 .class-card {
     background: var(--bg-white);
     border-radius: 24px;
-    padding: 3rem 2.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -659,8 +659,8 @@ nav {
 .explore-link {
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.05rem;
-    margin-top: 2rem;
+    font-size: 0.95rem;
+    margin-top: 1rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -683,8 +683,8 @@ nav {
 }
 
 .class-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
@@ -696,7 +696,7 @@ nav {
 
 .class-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
@@ -715,16 +715,10 @@ nav {
 
 .class-card p {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.class-card p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-top: 1rem;
-    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
 }
 
 .class-actions {
@@ -739,10 +733,12 @@ nav {
 
 .class-actions .curriculum-btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
     position: relative;
     z-index: 11;
 }
@@ -752,7 +748,7 @@ nav {
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -769,9 +765,10 @@ nav {
 .curriculum-btn {
     color: white;
     border: none;
-    padding: 0.875rem 1.75rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 0.9rem;
     font-weight: 600;
     font-size: 1rem;
     transition: all var(--transition-base);
@@ -1680,6 +1677,22 @@ footer {
 
     .curriculum-module h3 {
         font-size: 1.25rem;
+    }
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .classes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .class-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .class-card h3 {
+        font-size: 1.3rem;
     }
 }
 
