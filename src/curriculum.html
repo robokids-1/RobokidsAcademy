@@ -15,27 +15,27 @@
         .curriculum-page {
             min-height: 100vh;
             background: var(--bg-light);
-            padding-top: 100px;
-            padding-bottom: 4rem;
+            padding-top: 60px;
+            padding-bottom: 1rem;
         }
 
         .curriculum-container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0.5rem 1rem;
         }
 
         .curriculum-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 0.75rem;
         }
 
         .curriculum-header h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
             font-weight: 800;
             color: var(--text-primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
             letter-spacing: -0.02em;
         }
 
@@ -46,7 +46,8 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
             transition: all 0.3s ease;
         }
 
@@ -57,93 +58,136 @@
 
         .curriculum-content {
             background: var(--bg-white);
-            border-radius: 24px;
-            padding: 3rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .curriculum-module {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 2px solid var(--border-light);
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.2s ease;
         }
 
         .curriculum-module:last-child {
             border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .curriculum-module:hover {
+            padding-left: 0.25rem;
+        }
+
+        .curriculum-module-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .curriculum-module-number {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
         }
 
         .curriculum-module h3 {
             font-family: var(--font-heading);
-            font-size: 1.75rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
+            margin: 0;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
         }
 
         .curriculum-module h4 {
             font-family: var(--font-heading);
-            font-size: 1.25rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--primary);
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
+            margin-top: 0.6rem;
+            margin-bottom: 0.35rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .curriculum-module h4::before {
+            content: '';
+            width: 3px;
+            height: 0.85rem;
+            background: var(--primary);
+            border-radius: 2px;
         }
 
         .curriculum-module ul {
             list-style: none;
             padding: 0;
-            margin: 1rem 0;
+            margin: 0.25rem 0;
         }
 
         .curriculum-module ul li {
-            padding: 0.75rem 0;
-            padding-left: 1.5rem;
+            padding: 0.25rem 0;
+            padding-left: 1rem;
             position: relative;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.4;
+            font-size: 0.875rem;
         }
 
         .curriculum-module ul li::before {
-            content: '✓';
+            content: '▸';
             position: absolute;
             left: 0;
             color: var(--primary);
             font-weight: bold;
+            font-size: 0.75rem;
         }
 
         .project-box {
-            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(99, 102, 241, 0.05) 100%);
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-top: 1.5rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.03) 100%);
+            border-left: 3px solid var(--primary);
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            margin-top: 0.6rem;
         }
 
         .project-box strong {
             display: block;
             color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.35rem;
             font-family: var(--font-heading);
+            font-weight: 600;
         }
 
         .project-box p {
             color: var(--text-primary);
-            line-height: 1.7;
+            line-height: 1.5;
             margin: 0;
+            font-size: 0.85rem;
         }
 
         .loading-message,
         .error-message {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 1.5rem 1rem;
         }
 
         .loading-message p,
         .error-message p {
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
         }
 
@@ -152,16 +196,41 @@
         }
 
         @media (max-width: 768px) {
+            .curriculum-page {
+                padding-top: 60px;
+                padding-bottom: 1rem;
+            }
+
             .curriculum-container {
-                padding: 1rem;
+                padding: 0.5rem 0.75rem;
             }
 
             .curriculum-content {
-                padding: 2rem 1.5rem;
+                padding: 1rem 1.25rem;
+                border-radius: 10px;
+            }
+
+            .curriculum-header {
+                margin-bottom: 0.5rem;
+            }
+
+            .curriculum-header h1 {
+                font-size: 1.35rem;
+            }
+
+            .curriculum-module {
+                margin-bottom: 1rem;
+                padding-bottom: 0.75rem;
             }
 
             .curriculum-module h3 {
-                font-size: 1.5rem;
+                font-size: 1.05rem;
+            }
+
+            .curriculum-module-number {
+                width: 1.5rem;
+                height: 1.5rem;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -220,11 +289,11 @@
                 title: '📚 X-Bots Beginners Curriculum (Ages 6-8)'
             },
             'engineer': {
-                file: 'resources/curriculum_9-12.txt',
+                file: 'resources/curriculum_8-10.txt',
                 title: '📚 X-Creators Curriculum (Ages 8-10)'
             },
             'inventor': {
-                file: 'resources/cirriculum_13-16.txt',
+                file: 'resources/curriculum_10-13.txt',
                 title: '📚 X-Innovators Curriculum (Ages 10-13)'
             },
             'engineers': {

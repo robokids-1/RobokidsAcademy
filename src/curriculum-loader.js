@@ -90,7 +90,10 @@ function generateModuleHTML(module) {
 
     return `
                 <div class="curriculum-module">
-                    <h3>${module.number}. ${module.title}</h3>
+                    <div class="curriculum-module-header">
+                        <div class="curriculum-module-number">${module.number}</div>
+                        <h3>${module.title}</h3>
+                    </div>
                     <h4>Topics Covered:</h4>
                     <ul>
                         ${topicsHTML}
@@ -188,11 +191,10 @@ document.addEventListener('DOMContentLoaded', function () {
     loadCurriculum(basePath + 'curriculum_6-8.txt', 'beginnerCurriculumModal', 'X-Bots Beginners Curriculum', 'closeBeginnerCurriculum');
 
     // Load X-Creators curriculum (Ages 8-10)
-    loadCurriculum(basePath + 'curriculum_9-12.txt', 'curriculumModal', 'X-Creators Curriculum', 'closeCurriculum');
+    loadCurriculum(basePath + 'curriculum_8-10.txt', 'curriculumModal', 'X-Creators Curriculum', 'closeCurriculum');
 
     // Load X-Innovators curriculum (Ages 10-13)
-    // Note: File has typo in name - currlculum instead of cirriculum
-    loadCurriculum(basePath + 'currlculum_13-16.txt', 'futureCurriculumModal', 'X-Innovators Curriculum', 'closeFutureCurriculum');
+    loadCurriculum(basePath + 'curriculum_10-13.txt', 'futureCurriculumModal', 'X-Innovators Curriculum', 'closeFutureCurriculum');
 
     // Load X-Engineers curriculum (Ages 13-16)
     loadCurriculum(basePath + 'curriculum_13-16.txt', 'engineersCurriculumModal', 'X-Engineers Curriculum', 'closeEngineersCurriculum');
