@@ -242,7 +242,10 @@
             <div class="logo">
                 <a href="index.html" class="logo-link">
                     <span class="robot-emoji">🤖</span>
-                    <h1>FutureX Robotics</h1>
+                    <div class="logo-text">
+                        <h1>FutureX Robotics</h1>
+                        <p class="logo-tagline">Explore. Create. Innovate.</p>
+                    </div>
                 </a>
             </div>
             <ul class="nav-links">
@@ -305,7 +308,7 @@
         // Load curriculum when page loads
         document.addEventListener('DOMContentLoaded', function () {
             const config = curriculumConfig[curriculumType];
-            
+
             if (!config) {
                 document.getElementById('curriculumTitle').textContent = 'Curriculum Not Found';
                 document.getElementById('curriculumContent').innerHTML = '<div class="error-message"><p>Invalid curriculum type. Please select a valid program.</p></div>';
@@ -378,4 +381,3 @@
 </body>
 
 </html>
-

@@ -92,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Execute the onclick function
                 if (onclick.includes('openBeginnerCurriculum')) {
                     window.openBeginnerCurriculum();
+                } else if (onclick.includes('openEngineersCurriculum')) {
+                    window.openEngineersCurriculum();
                 } else if (onclick.includes('openCurriculum')) {
                     window.openCurriculum();
                 } else if (onclick.includes('openFutureCurriculum')) {
