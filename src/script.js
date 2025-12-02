@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to curriculum buttons as backup
     const curriculumButtons = document.querySelectorAll('.curriculum-btn');
     curriculumButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
             const onclick = btn.getAttribute('onclick');
             if (onclick) {
                 e.preventDefault();
@@ -239,7 +239,7 @@ window.addEventListener('hashchange', function () {
 });
 
 // Curriculum Modal Functions
-window.openCurriculum = function() {
+window.openCurriculum = function () {
     console.log('openCurriculum called');
     const modal = document.getElementById('curriculumModal');
     if (modal) {
@@ -251,7 +251,7 @@ window.openCurriculum = function() {
     }
 }
 
-window.closeCurriculum = function() {
+window.closeCurriculum = function () {
     const modal = document.getElementById('curriculumModal');
     if (modal) {
         modal.style.display = 'none';
@@ -260,7 +260,7 @@ window.closeCurriculum = function() {
 }
 
 // X-Bots Beginners Curriculum Modal Functions
-window.openBeginnerCurriculum = function() {
+window.openBeginnerCurriculum = function () {
     console.log('openBeginnerCurriculum called');
     const modal = document.getElementById('beginnerCurriculumModal');
     if (modal) {
@@ -272,7 +272,7 @@ window.openBeginnerCurriculum = function() {
     }
 }
 
-window.closeBeginnerCurriculum = function() {
+window.closeBeginnerCurriculum = function () {
     const modal = document.getElementById('beginnerCurriculumModal');
     if (modal) {
         modal.style.display = 'none';
@@ -281,7 +281,7 @@ window.closeBeginnerCurriculum = function() {
 }
 
 // X-Innovators Curriculum Modal Functions
-window.openFutureCurriculum = function() {
+window.openFutureCurriculum = function () {
     console.log('openFutureCurriculum called');
     const modal = document.getElementById('futureCurriculumModal');
     if (modal) {
@@ -293,7 +293,7 @@ window.openFutureCurriculum = function() {
     }
 }
 
-window.closeFutureCurriculum = function() {
+window.closeFutureCurriculum = function () {
     const modal = document.getElementById('futureCurriculumModal');
     if (modal) {
         modal.style.display = 'none';
@@ -302,7 +302,7 @@ window.closeFutureCurriculum = function() {
 }
 
 // X-Engineers Curriculum Modal Functions
-window.openEngineersCurriculum = function() {
+window.openEngineersCurriculum = function () {
     console.log('openEngineersCurriculum called');
     const modal = document.getElementById('engineersCurriculumModal');
     if (modal) {
@@ -314,7 +314,7 @@ window.openEngineersCurriculum = function() {
     }
 }
 
-window.closeEngineersCurriculum = function() {
+window.closeEngineersCurriculum = function () {
     const modal = document.getElementById('engineersCurriculumModal');
     if (modal) {
         modal.style.display = 'none';
@@ -327,6 +327,7 @@ window.onclick = function (event) {
     const curriculumModal = document.getElementById('curriculumModal');
     const beginnerModal = document.getElementById('beginnerCurriculumModal');
     const futureModal = document.getElementById('futureCurriculumModal');
+    const engineersModal = document.getElementById('engineersCurriculumModal');
 
     if (event.target === curriculumModal) {
         closeCurriculum();
@@ -337,6 +338,9 @@ window.onclick = function (event) {
     if (event.target === futureModal) {
         closeFutureCurriculum();
     }
+    if (event.target === engineersModal) {
+        closeEngineersCurriculum();
+    }
 }
 
 // Close modal with Escape key
@@ -345,5 +349,6 @@ document.addEventListener('keydown', function (event) {
         closeCurriculum();
         closeBeginnerCurriculum();
         closeFutureCurriculum();
+        closeEngineersCurriculum();
     }
 });
