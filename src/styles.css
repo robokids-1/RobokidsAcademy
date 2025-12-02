@@ -158,6 +158,12 @@ nav {
     opacity: 0.85;
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
 .logo-link h1 {
     margin: 0;
     font-family: var(--font-heading);
@@ -165,6 +171,16 @@ nav {
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+}
+
+.logo-tagline {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary, #6b7280);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: var(--font-body, 'Inter', sans-serif);
 }
 
 .robot-emoji {
