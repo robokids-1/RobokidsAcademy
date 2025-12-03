@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Program information
         if (message.includes('program') || message.includes('course') || message.includes('class')) {
-            return "We offer four amazing programs:\n\n🧩 X-Bots Beginners (Ages 6-8) - Perfect for your child to make the first steps into technology.\n\n⚙️ X-Creators (Ages 8-10) - Dive deeper into the world of Robotics and Coding.\n\n🚀 X-Innovators (Ages 10-13) - Prepare to launch your child into a great career ahead.\n\n🔧 X-Engineers (Ages 13-16) - Advanced engineering concepts and real-world applications.\n\nWould you like to know more about any specific program?";
+            return "We offer four amazing programs:\n\n🧩 X-Bots Beginners (Ages 8-10) - Perfect for your child to make the first steps into technology.\n\n⚙️ X-Creators (Ages 10-12) - Dive deeper into the world of Robotics and Coding.\n\n🚀 X-Innovators (Ages 12-14) - Prepare to launch your child into a great career ahead.\n\n🔧 X-Engineers (Ages 14-16) - Advanced engineering concepts and real-world applications.\n\nWould you like to know more about any specific program?";
         }
         
         // Age information
         if (message.includes('age') || message.includes('old')) {
-            return "We serve children from ages 6 to 16! Our programs are divided into four programs:\n\n• Ages 6-8: X-Bots Beginners\n• Ages 8-10: X-Creators\n• Ages 10-13: X-Innovators\n• Ages 13-16: X-Engineers\n\nWhich program are you interested in?";
+            return "We serve children from ages 8 to 16! Our programs are divided into four programs:\n\n• Ages 8-10: X-Bots Beginners\n• Ages 10-12: X-Creators\n• Ages 12-14: X-Innovators\n• Ages 14-16: X-Engineers\n\nWhich program are you interested in?";
         }
         
         // Booking/Trial

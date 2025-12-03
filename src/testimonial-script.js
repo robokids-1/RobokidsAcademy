@@ -213,10 +213,10 @@ function validateForm() {
             }, 2000);
         }
 
-        if (!studentAge.value || parseInt(studentAge.value) < 6 || parseInt(studentAge.value) > 16) {
+        if (!studentAge.value || parseInt(studentAge.value) < 8 || parseInt(studentAge.value) > 16) {
             isValid = false;
             studentAge.style.borderColor = errorColor;
-            alert('Please enter a valid student age (6-16 years)');
+            alert('Please enter a valid student age (8-16 years)');
             setTimeout(() => {
                 studentAge.style.borderColor = '';
             }, 2000);
@@ -373,10 +373,10 @@ function formatEmailBody(data) {
     body += `PROGRAM INFORMATION\n`;
     body += `-------------------\n`;
     const programNames = {
-        'beginner': '🧩 X-Bots Beginners (Ages 6-8)',
-        'engineer': '⚙️ X-Creators (Ages 8-10)',
-        'inventor': '🚀 X-Innovators (Ages 10-13)',
-        'engineers': '🔧 X-Engineers (Ages 13-16)',
+        'beginner': '🧩 X-Bots Beginners (Ages 8-10)',
+        'engineer': '⚙️ X-Creators (Ages 10-12)',
+        'inventor': '🚀 X-Innovators (Ages 12-14)',
+        'engineers': '🔧 X-Engineers (Ages 14-16)',
         'multiple': 'Multiple Programs'
     };
     body += `Program Attended: ${programNames[data.programAttended] || data.programAttended}\n`;

@@ -5,22 +5,22 @@ const programMap = {
     'beginner': {
         file: 'resources/Syllabus_6-8.txt',
         title: 'X-Bots Beginners Curriculum',
-        subtitle: 'Ages 6-8 years - Learning through play & simple bots'
+        subtitle: 'Ages 8-10 years - Learning through play & simple bots'
     },
     'creator': {
         file: 'resources/Syllabus_8-10.txt',
         title: 'X-Creators Curriculum',
-        subtitle: 'Ages 8-10 years - Basic robotics + coding concepts'
+        subtitle: 'Ages 10-12 years - Basic robotics + coding concepts'
     },
     'innovator': {
         file: 'resources/Syllabus_10-13.txt',
         title: 'X-Innovators Curriculum',
-        subtitle: 'Ages 10-13 years - Robot building, sensors, automation'
+        subtitle: 'Ages 12-14 years - Robot building, sensors, automation'
     },
     'engineer': {
         file: 'resources/Syllabus_13-16.txt',
         title: 'X-Engineers Curriculum',
-        subtitle: 'Ages 13-15 years - Advanced robotics & real-world projects'
+        subtitle: 'Ages 14-16 years - Advanced robotics & real-world projects'
     }
 };
 
