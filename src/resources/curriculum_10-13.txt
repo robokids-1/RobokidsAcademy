@@ -1,0 +1,86 @@
+Robotics Syllabus
+1. Robotics Foundations & Engineering Concepts
+Topics Covered:
+* Robotics in society and industry (career pathways, CTE connections)
+* Engineering design process
+* Overview of advanced robotics platforms (Arduino, Raspberry Pi, VEX EXP, VEX V5)
+* Safety, teamwork, and project management
+Hands-On Project:
+* Robotics Research Presentation: Teams research a field of robotics (e.g., medical, industrial, AI) and present findings, connecting to CTE and real-world applications.
+________________
+
+
+2. Mechanical Design & Prototyping
+Topics Covered:
+* Advanced mechanical concepts: gear ratios, torque, chassis design
+* CAD basics for robotics (using Tinkercad, Fusion 360, or similar)
+* Prototyping and iterative design
+Hands-On Project:
+* Custom Chassis Build: Design and build a robot chassis using VEX EXP or VEX V5 components; iterate based on performance tests.
+________________
+
+
+3. Arduino Microcontroller Programming
+Topics Covered:
+* Introduction to Arduino hardware and IDE
+* Wiring and using sensors/actuators (ultrasonic, IR, servo motors)
+* Writing and uploading Arduino C/C++ code
+* Data logging and debugging
+Hands-On Project:
+* Obstacle-Avoiding Robot: Build and program an Arduino robot that uses ultrasonic sensors to detect and avoid obstacles.
+________________
+
+
+4. Raspberry Pi & Physical Computing
+Topics Covered:
+* Raspberry Pi setup (OS installation, terminal basics)
+* Python programming for robotics
+* Using GPIO pins for input/output and sensor integration
+* Networking and remote access
+Hands-On Project:
+* Smart Home Prototype: Program a Raspberry Pi to automate lights or appliances based on sensor data (e.g., motion or temperature).
+________________
+
+
+5. Advanced Programming & Control Systems
+Topics Covered:
+* Structured programming: functions, classes, modularity
+* PID control and feedback systems
+* Introduction to ROS (Robot Operating System) concepts
+* Real-time data collection and analysis
+Hands-On Project:
+* Line-Following Robot with PID: Implement a line-following algorithm with PID control using VEX V5 or Arduino.
+________________
+
+
+6. VEX EXP & VEX V5 Robotics Competition Prep
+Topics Covered:
+* VEX EXP and VEX V5 hardware and software ecosystem
+* Sensor integration and autonomous routines
+* Strategy and teamwork for competition
+* Documentation and engineering notebooks (CTE best practice)
+Hands-On Project:
+* Competition Challenge: Build and program a robot to complete a VEX-style game or challenge, practicing both autonomous and driver control.
+________________
+
+
+7. Artificial Intelligence & Robotics (AIR)
+Topics Covered:
+* Introduction to AI: machine learning basics, computer vision
+* Using AI in robotics: object detection, decision making
+* Ethical considerations in AI and robotics
+* Real-world applications and case studies
+Hands-On Project:
+* AI Object Recognition: Use a Raspberry Pi with a camera and Python (OpenCV or TensorFlow Lite) to build a simple object recognition system, integrating results with a robot's actions.
+________________
+
+
+8. Capstone Project & Showcase
+Topics Covered:
+* Project planning and proposal writing
+* Prototyping, testing, and iteration
+* Team presentations and technical communication
+* Reflecting on CTE and future career pathways
+Hands-On Project:
+* Capstone Robotics Project: Students (individually or in teams) design, build, and program a robot that addresses a real-world problem or competition challenge, integrating mechanical, electronic, coding, and AI elements. Present final projects to peers, parents, and mentors.
+

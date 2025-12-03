@@ -1,4 +1,4 @@
-# RoboKids Academy Website
+# FutureX Robotics Website
 
 A fun, interactive website for a robotics class designed for kids!
 

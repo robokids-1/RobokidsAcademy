@@ -1,0 +1,47 @@
+<!-- Chatbot Widget -->
+<div id="chatbot-container" class="chatbot-container">
+    <div id="chatbot-toggle" class="chatbot-toggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="currentColor"/>
+        </svg>
+        <span class="chatbot-badge">1</span>
+    </div>
+    
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar">🤖</div>
+                <div>
+                    <h3>FutureX Assistant</h3>
+                    <p>We're here to help!</p>
+                </div>
+            </div>
+            <button id="chatbot-close" class="chatbot-close">×</button>
+        </div>
+        
+        <div id="chatbot-messages" class="chatbot-messages">
+            <div class="chatbot-message chatbot-message-bot">
+                <div class="chatbot-avatar-small">🤖</div>
+                <div class="chatbot-message-content">
+                    <p>Hello! 👋 Welcome to FutureX Robotics! I'm here to help you learn more about our robotics programs. How can I assist you today?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type your message..." autocomplete="off">
+            <button id="chatbot-send" class="chatbot-send">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="chatbot-quick-replies">
+            <button class="quick-reply-btn" data-message="Tell me about your programs">Programs</button>
+            <button class="quick-reply-btn" data-message="How do I book a trial?">Book Trial</button>
+            <button class="quick-reply-btn" data-message="What ages do you serve?">Ages</button>
+        </div>
+    </div>
+</div>
+

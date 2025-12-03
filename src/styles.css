@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 :root {
@@ -69,8 +72,6 @@ body {
     line-height: 1.7;
     color: var(--text-primary);
     position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     letter-spacing: -0.01em;
     overflow-x: hidden;
 }
@@ -158,6 +159,12 @@ nav {
     opacity: 0.85;
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
 .logo-link h1 {
     margin: 0;
     font-family: var(--font-heading);
@@ -165,6 +172,16 @@ nav {
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+}
+
+.logo-tagline {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary, #6b7280);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
 }
 
 .robot-emoji {
@@ -300,21 +317,49 @@ nav {
 }
 
 .hero-title-main {
-    font-weight: 600;
-    font-size: 1em;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: clamp(2.25rem, 5.5vw, 3.75rem);
     color: #ffffff;
     display: block;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2), 0 1px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.hero-title-main::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    border-radius: 2px;
+    opacity: 0.6;
 }
 
 .hero-title-sub {
+    font-family: var(--font-body);
     font-weight: 500;
-    font-size: 0.95em;
-    color: rgba(255, 255, 255, 0.95);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: rgba(255, 255, 255, 0.92);
     display: block;
-    font-style: normal;
-    letter-spacing: -0.01em;
-    margin-top: 0.4rem;
+    letter-spacing: 0.02em;
+    margin-top: 0.75rem;
+    line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.2s both;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-stats {
@@ -511,7 +556,7 @@ nav {
 .robotics-intro h2 {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
@@ -555,7 +600,7 @@ nav {
 .section-header h2 {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
@@ -579,7 +624,7 @@ nav {
     text-align: center;
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--spacing-xl);
     letter-spacing: -0.02em;
@@ -587,14 +632,14 @@ nav {
 
 .classes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
 }
 
 .class-card {
     background: var(--bg-white);
     border-radius: 24px;
-    padding: 3rem 2.5rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -659,8 +704,8 @@ nav {
 .explore-link {
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.05rem;
-    margin-top: 2rem;
+    font-size: 0.95rem;
+    margin-top: 1rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -683,8 +728,8 @@ nav {
 }
 
 .class-icon {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
@@ -696,7 +741,7 @@ nav {
 
 .class-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
@@ -715,16 +760,10 @@ nav {
 
 .class-card p {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.class-card p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-top: 1rem;
-    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
 }
 
 .class-actions {
@@ -739,10 +778,12 @@ nav {
 
 .class-actions .curriculum-btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 100%;
     text-decoration: none;
     display: inline-block;
     text-align: center;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
     position: relative;
     z-index: 11;
 }
@@ -752,7 +793,7 @@ nav {
     text-decoration: none;
     color: var(--primary);
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -769,11 +810,11 @@ nav {
 .curriculum-btn {
     color: white;
     border: none;
-    padding: 0.875rem 1.75rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 0.9rem;
     font-weight: 600;
-    font-size: 1rem;
     transition: all var(--transition-base);
     font-family: var(--font-body);
     letter-spacing: -0.01em;
@@ -827,7 +868,7 @@ nav {
     text-align: center;
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
@@ -913,7 +954,7 @@ nav {
     text-align: center;
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--spacing-xl);
     letter-spacing: -0.02em;
@@ -1043,7 +1084,7 @@ nav {
     text-align: center;
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 3rem;
     letter-spacing: -0.02em;
@@ -1118,7 +1159,7 @@ nav {
     top: -0.5rem;
     font-size: 3rem;
     color: var(--primary-light);
-    font-family: Georgia, serif;
+    font-family: var(--font-heading);
     line-height: 1;
     opacity: 0.3;
 }
@@ -1215,7 +1256,7 @@ nav {
 .features-section h2 {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
@@ -1308,7 +1349,7 @@ nav {
 .personality-section h2 {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
@@ -1404,7 +1445,7 @@ nav {
 .contact-section h2 {
     font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
@@ -1573,7 +1614,7 @@ footer {
     color: var(--text-primary);
     margin-bottom: 2rem;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 600;
     text-align: center;
     letter-spacing: -0.02em;
 }
@@ -1598,13 +1639,37 @@ footer {
     border-left-color: var(--primary-dark);
 }
 
+.curriculum-module-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.curriculum-module-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
 .curriculum-module h3 {
     font-family: var(--font-heading);
     color: var(--text-primary);
-    margin-bottom: 1.25rem;
+    margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    flex: 1;
 }
 
 .curriculum-module h4 {
@@ -1678,8 +1743,34 @@ footer {
         padding: 1.5rem;
     }
 
+    .curriculum-module-header {
+        gap: 0.75rem;
+    }
+
+    .curriculum-module-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
     .curriculum-module h3 {
         font-size: 1.25rem;
+    }
+}
+
+/* Tablet Responsive Design */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .classes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .class-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .class-card h3 {
+        font-size: 1.3rem;
     }
 }
 
