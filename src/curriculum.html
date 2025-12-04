@@ -15,57 +15,58 @@
         .curriculum-page {
             min-height: 100vh;
             background: var(--bg-light);
-            padding-top: 60px;
-            padding-bottom: 1rem;
+            padding-top: 70px;
+            padding-bottom: 0.5rem;
         }
 
         .curriculum-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0.5rem 1rem;
+            padding: 0.25rem 1rem;
         }
 
         .curriculum-header {
             text-align: center;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
 
         .curriculum-header h1 {
             font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
             font-weight: 800;
             color: var(--text-primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.15rem;
             letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .curriculum-header .back-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            margin-bottom: 0.35rem;
             transition: all 0.3s ease;
         }
 
         .curriculum-header .back-link:hover {
             color: var(--primary-dark);
-            gap: 0.75rem;
+            gap: 0.6rem;
         }
 
         .curriculum-content {
             background: var(--bg-white);
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
+            border-radius: 10px;
+            padding: 0.9rem 1.2rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .curriculum-module {
-            margin-bottom: 1.25rem;
-            padding-bottom: 1rem;
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.7rem;
             border-bottom: 1px solid var(--border-light);
             transition: all 0.2s ease;
         }
@@ -77,56 +78,103 @@
         }
 
         .curriculum-module:hover {
-            padding-left: 0.25rem;
+            padding-left: 0.2rem;
         }
 
         .curriculum-module-header {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.6rem;
+            gap: 0.5rem;
+            margin-bottom: 0;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .curriculum-module-header::after {
+            content: '▼';
+            margin-left: auto;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            display: inline-block;
+            line-height: 1;
+            padding-left: 0.5rem;
+        }
+
+        .curriculum-module.expanded .curriculum-module-header::after {
+            transform: rotate(180deg);
+        }
+
+        /* Default: All content is collapsed */
+        .curriculum-module .curriculum-module-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin 0.3s ease-out;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        /* Expanded: Content is visible */
+        .curriculum-module.expanded .curriculum-module-content {
+            max-height: 5000px;
+            opacity: 1;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            transition: max-height 0.5s ease-in, opacity 0.4s ease-in, margin 0.3s ease-in;
         }
 
         .curriculum-module-number {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            width: 1.75rem;
-            height: 1.75rem;
-            border-radius: 6px;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             flex-shrink: 0;
         }
 
         .curriculum-module h3 {
             font-family: var(--font-heading);
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-primary);
             margin: 0;
             letter-spacing: -0.01em;
-            line-height: 1.3;
+            line-height: 1.25;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .curriculum-module h4 {
             font-family: var(--font-heading);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--primary);
-            margin-top: 0.6rem;
-            margin-bottom: 0.35rem;
+            margin-top: 0.4rem;
+            margin-bottom: 0.25rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.35rem;
         }
 
         .curriculum-module h4::before {
             content: '';
-            width: 3px;
-            height: 0.85rem;
+            width: 2.5px;
+            height: 0.75rem;
             background: var(--primary);
             border-radius: 2px;
         }
@@ -134,16 +182,18 @@
         .curriculum-module ul {
             list-style: none;
             padding: 0;
-            margin: 0.25rem 0;
+            margin: 0.15rem 0;
         }
 
         .curriculum-module ul li {
-            padding: 0.25rem 0;
-            padding-left: 1rem;
+            padding: 0.15rem 0;
+            padding-left: 0.9rem;
             position: relative;
             color: var(--text-secondary);
-            line-height: 1.4;
-            font-size: 0.875rem;
+            line-height: 1.35;
+            font-size: 0.8rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .curriculum-module ul li::before {
@@ -152,42 +202,42 @@
             left: 0;
             color: var(--primary);
             font-weight: bold;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
         }
 
         .project-box {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.03) 100%);
             border-left: 3px solid var(--primary);
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            margin-top: 0.6rem;
+            padding: 0.6rem 0.85rem;
+            border-radius: 5px;
+            margin-top: 0.4rem;
         }
 
         .project-box strong {
             display: block;
             color: var(--primary);
-            font-size: 0.875rem;
-            margin-bottom: 0.35rem;
+            font-size: 0.8rem;
+            margin-bottom: 0.25rem;
             font-family: var(--font-heading);
             font-weight: 600;
         }
 
         .project-box p {
             color: var(--text-primary);
-            line-height: 1.5;
+            line-height: 1.4;
             margin: 0;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .loading-message,
         .error-message {
             text-align: center;
-            padding: 1.5rem 1rem;
+            padding: 1rem 0.75rem;
         }
 
         .loading-message p,
         .error-message p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
         }
 
@@ -197,40 +247,123 @@
 
         @media (max-width: 768px) {
             .curriculum-page {
-                padding-top: 60px;
-                padding-bottom: 1rem;
+                padding-top: 70px;
+                padding-bottom: 0.5rem;
             }
 
             .curriculum-container {
-                padding: 0.5rem 0.75rem;
+                padding: 0.25rem 0.75rem;
+                max-width: 100%;
             }
 
             .curriculum-content {
-                padding: 1rem 1.25rem;
-                border-radius: 10px;
+                padding: 0.75rem 0.9rem;
+                border-radius: 8px;
             }
 
             .curriculum-header {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.4rem;
             }
 
             .curriculum-header h1 {
-                font-size: 1.35rem;
+                font-size: 1.2rem;
+                line-height: 1.3;
+                margin-bottom: 0.1rem;
+            }
+
+            .curriculum-header .back-link {
+                font-size: 0.75rem;
+                margin-bottom: 0.3rem;
             }
 
             .curriculum-module {
-                margin-bottom: 1rem;
-                padding-bottom: 0.75rem;
+                margin-bottom: 0.7rem;
+                padding-bottom: 0.5rem;
+            }
+
+            .curriculum-module-header {
+                gap: 0.4rem;
+                margin-bottom: 0.35rem;
+                flex-wrap: wrap;
+            }
+
+            .curriculum-module-header::after {
+                font-size: 0.65rem;
             }
 
             .curriculum-module h3 {
-                font-size: 1.05rem;
+                font-size: 0.95rem;
+                line-height: 1.3;
+                flex: 1;
+                min-width: 0;
             }
 
             .curriculum-module-number {
-                width: 1.5rem;
-                height: 1.5rem;
+                width: 1.3rem;
+                height: 1.3rem;
+                font-size: 0.7rem;
+                flex-shrink: 0;
+            }
+
+            .curriculum-module h4 {
                 font-size: 0.8rem;
+                margin-top: 0.35rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .curriculum-module ul {
+                margin: 0.1rem 0;
+            }
+
+            .curriculum-module ul li {
+                padding: 0.2rem 0;
+                padding-left: 0.85rem;
+                font-size: 0.75rem;
+                line-height: 1.5;
+            }
+
+            .project-box {
+                padding: 0.5rem 0.7rem;
+                margin-top: 0.35rem;
+            }
+
+            .project-box strong {
+                font-size: 0.75rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .project-box p {
+                font-size: 0.75rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .curriculum-container {
+                padding: 0.2rem 0.5rem;
+            }
+
+            .curriculum-content {
+                padding: 0.6rem 0.75rem;
+            }
+
+            .curriculum-header h1 {
+                font-size: 1.1rem;
+            }
+
+            .curriculum-module h3 {
+                font-size: 0.9rem;
+            }
+
+            .curriculum-module ul li {
+                font-size: 0.7rem;
+                line-height: 1.6;
+            }
+
+            .curriculum-module-number {
+                width: 1.2rem;
+                height: 1.2rem;
+                font-size: 0.65rem;
             }
         }
     </style>
@@ -355,6 +488,11 @@
                 const modulesHTML = curriculum.modules.map(module => generateModuleHTML(module)).join('\n');
                 contentDiv.innerHTML = modulesHTML;
 
+                // Initialize collapsible modules after a short delay to ensure DOM is ready
+                setTimeout(() => {
+                    initCollapsibleModules();
+                }, 100);
+
             } catch (error) {
                 console.error(`Error loading curriculum from ${filePath}:`, error);
 
@@ -376,6 +514,72 @@
                     </div>
                 `;
             }
+        }
+
+        // Initialize collapsible modules (works on all screen sizes)
+        function initCollapsibleModules() {
+            const modules = document.querySelectorAll('.curriculum-module');
+            console.log('Initializing collapsible modules. Found:', modules.length);
+
+            if (modules.length === 0) {
+                console.warn('No curriculum modules found. Retrying in 200ms...');
+                setTimeout(initCollapsibleModules, 200);
+                return;
+            }
+
+            modules.forEach((module, index) => {
+                const header = module.querySelector('.curriculum-module-header');
+                const content = module.querySelector('.curriculum-module-content');
+
+                console.log(`Module ${index}:`, {
+                    hasHeader: !!header,
+                    hasContent: !!content,
+                    hasExpandedClass: module.classList.contains('expanded')
+                });
+
+                if (!header || !content) {
+                    console.warn('Module structure incomplete for module', index, {
+                        header: header ? 'found' : 'missing',
+                        content: content ? 'found' : 'missing'
+                    });
+                    return;
+                }
+
+                // Remove any existing listeners by cloning
+                if (header.hasAttribute('data-listener-added')) {
+                    const newHeader = header.cloneNode(true);
+                    header.parentNode.replaceChild(newHeader, header);
+                }
+
+                // Get the header again after potential cloning
+                const currentHeader = module.querySelector('.curriculum-module-header');
+                if (!currentHeader) {
+                    console.warn('Could not find header after cloning for module', index);
+                    return;
+                }
+
+                currentHeader.setAttribute('data-listener-added', 'true');
+                currentHeader.style.cursor = 'pointer';
+
+                currentHeader.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const isExpanded = module.classList.contains('expanded');
+                    console.log(`Module ${index} clicked. Currently expanded:`, isExpanded);
+                    if (isExpanded) {
+                        module.classList.remove('expanded');
+                    } else {
+                        module.classList.add('expanded');
+                    }
+                    console.log(`Module ${index} after toggle. Expanded:`, module.classList.contains('expanded'));
+                });
+
+                // Ensure all modules start collapsed (no expanded class)
+                module.classList.remove('expanded');
+                console.log(`Module ${index} initialized. Expanded:`, module.classList.contains('expanded'));
+            });
+
+            console.log('Collapsible modules initialization complete. Total:', modules.length);
         }
     </script>
 </body>

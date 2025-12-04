@@ -9,7 +9,6 @@ Hands-On Project:
 * Robotics Research Presentation: Teams research a field of robotics (e.g., medical, industrial, AI) and present findings, connecting to CTE and real-world applications.
 ________________
 
-
 2. Mechanical Design & Prototyping
 Topics Covered:
 * Advanced mechanical concepts: gear ratios, torque, chassis design
@@ -18,7 +17,6 @@ Topics Covered:
 Hands-On Project:
 * Custom Chassis Build: Design and build a robot chassis using VEX EXP or VEX V5 components; iterate based on performance tests.
 ________________
-
 
 3. Arduino Microcontroller Programming
 Topics Covered:
@@ -30,7 +28,6 @@ Hands-On Project:
 * Obstacle-Avoiding Robot: Build and program an Arduino robot that uses ultrasonic sensors to detect and avoid obstacles.
 ________________
 
-
 4. Raspberry Pi & Physical Computing
 Topics Covered:
 * Raspberry Pi setup (OS installation, terminal basics)
@@ -40,7 +37,6 @@ Topics Covered:
 Hands-On Project:
 * Smart Home Prototype: Program a Raspberry Pi to automate lights or appliances based on sensor data (e.g., motion or temperature).
 ________________
-
 
 5. Advanced Programming & Control Systems
 Topics Covered:
@@ -52,7 +48,6 @@ Hands-On Project:
 * Line-Following Robot with PID: Implement a line-following algorithm with PID control using VEX V5 or Arduino.
 ________________
 
-
 6. VEX EXP & VEX V5 Robotics Competition Prep
 Topics Covered:
 * VEX EXP and VEX V5 hardware and software ecosystem
@@ -63,7 +58,6 @@ Hands-On Project:
 * Competition Challenge: Build and program a robot to complete a VEX-style game or challenge, practicing both autonomous and driver control.
 ________________
 
-
 7. Artificial Intelligence & Robotics (AIR)
 Topics Covered:
 * Introduction to AI: machine learning basics, computer vision
@@ -73,7 +67,6 @@ Topics Covered:
 Hands-On Project:
 * AI Object Recognition: Use a Raspberry Pi with a camera and Python (OpenCV or TensorFlow Lite) to build a simple object recognition system, integrating results with a robot's actions.
 ________________
-
 
 8. Capstone Project & Showcase
 Topics Covered:

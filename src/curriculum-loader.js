@@ -94,13 +94,15 @@ function generateModuleHTML(module) {
                         <div class="curriculum-module-number">${module.number}</div>
                         <h3>${module.title}</h3>
                     </div>
-                    <h4>Topics Covered:</h4>
-                    <ul>
-                        ${topicsHTML}
-                    </ul>
-                    <div class="project-box">
-                        <strong>Hands-On Project:</strong>
-                        <p>${module.project}</p>
+                    <div class="curriculum-module-content">
+                        <h4>Topics Covered:</h4>
+                        <ul>
+                            ${topicsHTML}
+                        </ul>
+                        <div class="project-box">
+                            <strong>Hands-On Project:</strong>
+                            <p>${module.project}</p>
+                        </div>
                     </div>
                 </div>`;
 }
@@ -155,6 +157,11 @@ async function loadCurriculum(filePath, modalId, title, closeFunctionName) {
             titleElement.textContent = `📚 ${curriculum.title}`;
         }
 
+        // Initialize collapsible modules in modal
+        setTimeout(() => {
+            initCollapsibleModulesInModal(modal);
+        }, 100);
+
     } catch (error) {
         console.error(`Error loading curriculum from ${filePath}:`, error);
 
@@ -199,4 +206,53 @@ document.addEventListener('DOMContentLoaded', function () {
     // Load X-Engineers curriculum (Ages 14-16)
     loadCurriculum(basePath + 'curriculum_13-16.txt', 'engineersCurriculumModal', 'X-Engineers Curriculum', 'closeEngineersCurriculum');
 });
+
+// Initialize collapsible modules in modal
+function initCollapsibleModulesInModal(modal) {
+    const modules = modal.querySelectorAll('.curriculum-module');
+
+    if (modules.length === 0) {
+        console.warn('No curriculum modules found in modal');
+        return;
+    }
+
+    modules.forEach((module, index) => {
+        const header = module.querySelector('.curriculum-module-header');
+        const content = module.querySelector('.curriculum-module-content');
+
+        if (!header || !content) {
+            console.warn('Module structure incomplete for module', index);
+            return;
+        }
+
+        // Remove any existing listeners by cloning
+        if (header.hasAttribute('data-listener-added')) {
+            const newHeader = header.cloneNode(true);
+            header.parentNode.replaceChild(newHeader, header);
+        }
+
+        // Get the header again after potential cloning
+        const currentHeader = module.querySelector('.curriculum-module-header');
+        if (!currentHeader) return;
+
+        currentHeader.setAttribute('data-listener-added', 'true');
+        currentHeader.style.cursor = 'pointer';
+
+        currentHeader.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const isExpanded = module.classList.contains('expanded');
+            if (isExpanded) {
+                module.classList.remove('expanded');
+            } else {
+                module.classList.add('expanded');
+            }
+        });
+
+        // All modules start collapsed
+        module.classList.remove('expanded');
+    });
+
+    console.log('Collapsible modules initialized in modal:', modules.length);
+}
 
