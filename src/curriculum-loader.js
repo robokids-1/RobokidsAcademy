@@ -187,16 +187,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Server is running from src/ directory, so use resources/ (not src/resources/)
     const basePath = 'resources/';
 
-    // Load X-Bots Beginners curriculum (Ages 6-8)
+    // Load X-Bots Beginners curriculum (Ages 8-10)
     loadCurriculum(basePath + 'curriculum_6-8.txt', 'beginnerCurriculumModal', 'X-Bots Beginners Curriculum', 'closeBeginnerCurriculum');
 
-    // Load X-Creators curriculum (Ages 8-10)
+    // Load X-Creators curriculum (Ages 10-12)
     loadCurriculum(basePath + 'curriculum_8-10.txt', 'curriculumModal', 'X-Creators Curriculum', 'closeCurriculum');
 
-    // Load X-Innovators curriculum (Ages 10-13)
+    // Load X-Innovators curriculum (Ages 12-14)
     loadCurriculum(basePath + 'curriculum_10-13.txt', 'futureCurriculumModal', 'X-Innovators Curriculum', 'closeFutureCurriculum');
 
-    // Load X-Engineers curriculum (Ages 13-16)
+    // Load X-Engineers curriculum (Ages 14-16)
     loadCurriculum(basePath + 'curriculum_13-16.txt', 'engineersCurriculumModal', 'X-Engineers Curriculum', 'closeEngineersCurriculum');
 });
 
