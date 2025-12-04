@@ -630,10 +630,43 @@ nav {
     letter-spacing: -0.02em;
 }
 
+.classes-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 .classes-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
+}
+
+.classes-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.classes-grid>.class-card {
+    flex: 0 0 auto;
+    width: calc((100% - 4.5rem) / 4);
+    /* 4 cards with 3 gaps of 1.5rem */
+    min-width: 280px;
+    scroll-snap-align: start;
+}
+
+/* On larger screens, maintain consistent card size */
+@media (min-width: 1200px) {
+    .classes-grid>.class-card {
+        width: calc((100% - 4.5rem) / 4);
+    }
 }
 
 .class-card {
@@ -776,6 +809,111 @@ nav {
     z-index: 10;
 }
 
+.classes-pagination {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.classes-pagination.active {
+    display: flex;
+}
+
+.classes-pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.classes-pagination-dot:hover {
+    background: rgba(99, 102, 241, 0.6);
+    transform: scale(1.2);
+}
+
+.classes-pagination-dot.active {
+    background: var(--primary);
+    width: 12px;
+    height: 12px;
+}
+
+.projects-pagination,
+.testimonials-pagination {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.projects-pagination.active,
+.testimonials-pagination.active {
+    display: flex;
+}
+
+.projects-pagination-dot,
+.testimonials-pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.projects-pagination-dot:hover,
+.testimonials-pagination-dot:hover {
+    background: rgba(99, 102, 241, 0.6);
+    transform: scale(1.2);
+}
+
+.projects-pagination-dot.active,
+.testimonials-pagination-dot.active,
+.personality-pagination-dot.active {
+    background: var(--primary);
+    width: 12px;
+    height: 12px;
+}
+
+.personality-pagination {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.personality-pagination.active {
+    display: flex;
+}
+
+.personality-pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.personality-pagination-dot:hover {
+    background: rgba(99, 102, 241, 0.6);
+    transform: scale(1.2);
+}
+
 .class-actions .curriculum-btn {
     width: 100%;
     max-width: 100%;
@@ -874,12 +1012,39 @@ nav {
     letter-spacing: -0.02em;
 }
 
+.projects-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
     gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.projects-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.projects-grid>.project-card {
+    flex: 0 0 auto;
+    width: calc((100% - 4rem) / 3);
+    /* 3 cards with 2 gaps of 2rem */
+    min-width: 280px;
+    max-width: 400px;
+    scroll-snap-align: start;
 }
 
 .project-card {
@@ -1090,12 +1255,39 @@ nav {
     letter-spacing: -0.02em;
 }
 
+.testimonials-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    display: flex;
     gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.testimonials-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.testimonials-grid>.testimonial-card {
+    flex: 0 0 auto;
+    width: calc((100% - 4rem) / 3);
+    /* 3 cards with 2 gaps of 2rem */
+    min-width: 320px;
+    max-width: 420px;
+    scroll-snap-align: start;
 }
 
 .testimonial-card {
@@ -1358,11 +1550,38 @@ nav {
     margin-right: auto;
 }
 
+.personality-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
 .personality-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
     gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x mandatory;
     margin-top: 3rem;
+}
+
+.personality-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.personality-grid>.personality-card {
+    flex: 0 0 auto;
+    width: calc((100% - 4rem) / 3);
+    /* 3 cards with 2 gaps of 2rem */
+    min-width: 280px;
+    max-width: 400px;
+    scroll-snap-align: start;
 }
 
 .personality-card {
@@ -1760,9 +1979,10 @@ footer {
 
 /* Tablet Responsive Design */
 @media (max-width: 1024px) and (min-width: 769px) {
-    .classes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
+    .classes-grid>.class-card {
+        width: calc((100% - 1.25rem) / 2);
+        /* 2 cards with 1 gap of 1.25rem */
+        min-width: 320px;
     }
 
     .class-card {
@@ -1823,22 +2043,32 @@ footer {
         padding: 4rem 1.5rem;
     }
 
-    .classes-grid {
+    .classes-grid>.class-card {
+        width: calc(100% - 0rem);
+        min-width: 100%;
+    }
+
+    .projects-grid>.project-card {
+        width: calc(100% - 0rem);
+        min-width: 100%;
+    }
+
+    .testimonials-grid>.testimonial-card {
+        width: calc(100% - 0rem);
+        min-width: 100%;
+    }
+
+    .blog-grid {
         grid-template-columns: 1fr;
     }
 
-    .projects-grid {
+    .features-grid {
         grid-template-columns: 1fr;
     }
 
-    .blog-grid,
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .features-grid,
-    .personality-grid {
-        grid-template-columns: 1fr;
+    .personality-grid>.personality-card {
+        width: calc(100% - 0rem);
+        min-width: 100%;
     }
 
     .footer-content {

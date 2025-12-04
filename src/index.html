@@ -85,65 +85,68 @@
                     <h2>FutureX Learning Tracks</h2>
                     <p class="section-description">Choose the perfect program for your child's age and interests</p>
                 </div>
-                <div class="classes-grid">
-                    <div class="class-card">
-                        <div class="class-link">
-                            <div class="class-icon">🧩</div>
-                            <h3>X-Bots Beginners</h3>
-                            <p class="class-age">Ages 8-10</p>
-                            <p>Perfect for your child to make the first steps into technology. Let's build the right
-                                kind of curiosity in your child.</p>
+                <div class="classes-slider-wrapper">
+                    <div class="classes-grid" id="classesGrid">
+                        <div class="class-card">
+                            <div class="class-link">
+                                <div class="class-icon">🧩</div>
+                                <h3>X-Bots Beginners</h3>
+                                <p class="class-age">Ages 8-10</p>
+                                <p>Perfect for your child to make the first steps into technology. Let's build the right
+                                    kind of curiosity in your child.</p>
+                            </div>
+                            <div class="class-actions">
+                                <button type="button" class="curriculum-btn" onclick="openBeginnerCurriculum()">View
+                                    Curriculum</button>
+                                <a href="enquiry.html" class="explore-link">Enroll Now →</a>
+                            </div>
                         </div>
-                        <div class="class-actions">
-                            <button type="button" class="curriculum-btn" onclick="openBeginnerCurriculum()">View
-                                Curriculum</button>
-                            <a href="enquiry.html" class="explore-link">Enroll Now →</a>
-                        </div>
-                    </div>
 
-                    <div class="class-card">
-                        <div class="class-link">
-                            <div class="class-icon">⚙️</div>
-                            <h3>X-Creators</h3>
-                            <p class="class-age">Ages 10-12</p>
-                            <p>Let your child dive deeper into the world of Robotics and Coding. See how creativity and
-                                innovation improves the confidence in your child.</p>
+                        <div class="class-card">
+                            <div class="class-link">
+                                <div class="class-icon">⚙️</div>
+                                <h3>X-Creators</h3>
+                                <p class="class-age">Ages 10-12</p>
+                                <p>Let your child dive deeper into the world of Robotics and Coding. See how creativity and
+                                    innovation improves the confidence in your child.</p>
+                            </div>
+                            <div class="class-actions">
+                                <button type="button" class="curriculum-btn" onclick="openCurriculum()">View
+                                    Curriculum</button>
+                                <a href="enquiry.html" class="explore-link">Enroll Now →</a>
+                            </div>
                         </div>
-                        <div class="class-actions">
-                            <button type="button" class="curriculum-btn" onclick="openCurriculum()">View
-                                Curriculum</button>
-                            <a href="enquiry.html" class="explore-link">Enroll Now →</a>
-                        </div>
-                    </div>
 
-                    <div class="class-card">
-                        <div class="class-link">
-                            <div class="class-icon">🚀</div>
-                            <h3>X-Innovators</h3>
-                            <p class="class-age">Ages 12-14</p>
-                            <p>Prepare to launch your child into a great career ahead. Give an exposure that helps your
-                                child make the right career choices.</p>
+                        <div class="class-card">
+                            <div class="class-link">
+                                <div class="class-icon">🚀</div>
+                                <h3>X-Innovators</h3>
+                                <p class="class-age">Ages 12-14</p>
+                                <p>Prepare to launch your child into a great career ahead. Give an exposure that helps your
+                                    child make the right career choices.</p>
+                            </div>
+                            <div class="class-actions">
+                                <button type="button" class="curriculum-btn" onclick="openFutureCurriculum()">View
+                                    Curriculum</button>
+                                <a href="enquiry.html" class="explore-link">Enroll Now →</a>
+                            </div>
                         </div>
-                        <div class="class-actions">
-                            <button type="button" class="curriculum-btn" onclick="openFutureCurriculum()">View
-                                Curriculum</button>
-                            <a href="enquiry.html" class="explore-link">Enroll Now →</a>
-                        </div>
-                    </div>
 
-                    <div class="class-card">
-                        <div class="class-link">
-                            <div class="class-icon">🔧</div>
-                            <h3>X-Engineers</h3>
-                            <p class="class-age">Ages 14-16</p>
-                            <p>Advanced engineering concepts and real-world applications. Build complex robotics systems and develop professional engineering skills.</p>
-                        </div>
-                        <div class="class-actions">
-                            <button type="button" class="curriculum-btn" onclick="openEngineersCurriculum()">View
-                                Curriculum</button>
-                            <a href="enquiry.html" class="explore-link">Enroll Now →</a>
+                        <div class="class-card">
+                            <div class="class-link">
+                                <div class="class-icon">🔧</div>
+                                <h3>X-Engineers</h3>
+                                <p class="class-age">Ages 14-16</p>
+                                <p>Advanced engineering concepts and real-world applications. Build complex robotics systems and develop professional engineering skills.</p>
+                            </div>
+                            <div class="class-actions">
+                                <button type="button" class="curriculum-btn" onclick="openEngineersCurriculum()">View
+                                    Curriculum</button>
+                                <a href="enquiry.html" class="explore-link">Enroll Now →</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="classes-pagination" id="classesPagination"></div>
                 </div>
             </div>
         </section>
@@ -154,24 +157,27 @@
                 <p class="section-subtitle">With FutureX Robotics, your child will build products in the real world to solve
                     real world problems and become skilled in technologies that matter for the future. Best part - this
                     happens while your child is playing!</p>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image">🤖</div>
-                        <h3>Dancing Robot</h3>
-                        <p>Program a robot to dance to your favorite music!</p>
-                    </div>
+                <div class="projects-slider-wrapper">
+                    <div class="projects-grid" id="projectsGrid">
+                        <div class="project-card">
+                            <div class="project-image">🤖</div>
+                            <h3>Dancing Robot</h3>
+                            <p>Program a robot to dance to your favorite music!</p>
+                        </div>
 
-                    <div class="project-card">
-                        <div class="project-image">🏠</div>
-                        <h3>Smart Home Assistant</h3>
-                        <p>Build a robot that helps around the house!</p>
-                    </div>
+                        <div class="project-card">
+                            <div class="project-image">🏠</div>
+                            <h3>Smart Home Assistant</h3>
+                            <p>Build a robot that helps around the house!</p>
+                        </div>
 
-                    <div class="project-card">
-                        <div class="project-image">🎮</div>
-                        <h3>Robot Game Controller</h3>
-                        <p>Create your own gaming robot!</p>
+                        <div class="project-card">
+                            <div class="project-image">🎮</div>
+                            <h3>Robot Game Controller</h3>
+                            <p>Create your own gaming robot!</p>
+                        </div>
                     </div>
+                    <div class="projects-pagination" id="projectsPagination"></div>
                 </div>
                 <div class="section-cta">
                     <a href="enquiry.html" class="cta-button">Book a free trial</a>
@@ -183,49 +189,52 @@
         <section id="testimonials" class="testimonials-section">
             <div class="container">
                 <h2>Happy Parents and Students</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            "During the last 3 years, more than 500 students participated in our robotics workshops. The
-                            hands-on approach really helps students understand complex concepts."
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">👨‍🏫</div>
-                            <div class="testimonial-info">
-                                <h4>Prof. P. Rao</h4>
-                                <p>Engineering Educator</p>
+                <div class="testimonials-slider-wrapper">
+                    <div class="testimonials-grid" id="testimonialsGrid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "During the last 3 years, more than 500 students participated in our robotics workshops. The
+                                hands-on approach really helps students understand complex concepts."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">👨‍🏫</div>
+                                <div class="testimonial-info">
+                                    <h4>Prof. P. Rao</h4>
+                                    <p>Engineering Educator</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            "At first, I thought Robotics for kids is just a fancy advertisement. But after attending
-                            the free session, I understood the concept and how it brings out the potential of my
-                            daughter."
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">👩‍⚕️</div>
-                            <div class="testimonial-info">
-                                <h4>Dr. Amrutha</h4>
-                                <p>Parent & Doctor</p>
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "At first, I thought Robotics for kids is just a fancy advertisement. But after attending
+                                the free session, I understood the concept and how it brings out the potential of my
+                                daughter."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">👩‍⚕️</div>
+                                <div class="testimonial-info">
+                                    <h4>Dr. Amrutha</h4>
+                                    <p>Parent & Doctor</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            "My son loves the FutureX Robotics kit and sessions. For him, science is fun unlike what I felt in
-                            my childhood. He now shows more interest towards understanding science."
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">👨‍💼</div>
-                            <div class="testimonial-info">
-                                <h4>David A.</h4>
-                                <p>Parent</p>
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                "My son loves the FutureX Robotics kit and sessions. For him, science is fun unlike what I felt in
+                                my childhood. He now shows more interest towards understanding science."
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">👨‍💼</div>
+                                <div class="testimonial-info">
+                                    <h4>David A.</h4>
+                                    <p>Parent</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="testimonials-pagination" id="testimonialsPagination"></div>
                 </div>
                 <div class="testimonials-cta">
                     <a href="testimonial.html" class="btn-primary testimonial-share-btn">Share Your Testimonial</a>
@@ -267,23 +276,26 @@
                 <p class="section-subtitle">Regular academics treat failure harshly. So kids stop experimenting and lose
                     their confidence to innovate. FutureX Robotics's approach creates innovators - by encouraging kids
                     to experiment, fail, and learn from failures.</p>
-                <div class="personality-grid">
-                    <div class="personality-card">
-                        <div class="personality-icon">🔍</div>
-                        <h3>Explore. Not memorize.</h3>
-                        <p>Your child will learn by solving real-world problems and building actual products.</p>
+                <div class="personality-slider-wrapper">
+                    <div class="personality-grid" id="personalityGrid">
+                        <div class="personality-card">
+                            <div class="personality-icon">🔍</div>
+                            <h3>Explore. Not memorize.</h3>
+                            <p>Your child will learn by solving real-world problems and building actual products.</p>
+                        </div>
+                        <div class="personality-card">
+                            <div class="personality-icon">💡</div>
+                            <h3>Make mistakes. And learn.</h3>
+                            <p>While inventing the electric bulb, Edison said, "I've not failed. I've just found 10,000 ways
+                                that won't work."</p>
+                        </div>
+                        <div class="personality-card">
+                            <div class="personality-icon">✨</div>
+                            <h3>Confidence. Not just marks.</h3>
+                            <p>Your child will learn to face the real world. And develop the confidence to change it.</p>
+                        </div>
                     </div>
-                    <div class="personality-card">
-                        <div class="personality-icon">💡</div>
-                        <h3>Make mistakes. And learn.</h3>
-                        <p>While inventing the electric bulb, Edison said, "I've not failed. I've just found 10,000 ways
-                            that won't work."</p>
-                    </div>
-                    <div class="personality-card">
-                        <div class="personality-icon">✨</div>
-                        <h3>Confidence. Not just marks.</h3>
-                        <p>Your child will learn to face the real world. And develop the confidence to change it.</p>
-                    </div>
+                    <div class="personality-pagination" id="personalityPagination"></div>
                 </div>
                 <div class="section-cta">
                     <a href="enquiry.html" class="cta-button">Get your 1:1 Live Online Class for Free. Register Now</a>
@@ -385,10 +397,10 @@
 
     <script src="curriculum-loader.js"></script>
     <script src="script.js"></script>
-
+    
     <!-- EmailJS for chatbot - Load before chatbot.js -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
+    
     <!-- Chatbot -->
     <div id="chatbot-container" class="chatbot-container">
         <div id="chatbot-toggle" class="chatbot-toggle">
@@ -398,7 +410,7 @@
             </svg>
             <span class="chatbot-badge">1</span>
         </div>
-
+        
         <div id="chatbot-window" class="chatbot-window">
             <div class="chatbot-header">
                 <div class="chatbot-header-info">
@@ -410,7 +422,7 @@
                 </div>
                 <button id="chatbot-close" class="chatbot-close">×</button>
             </div>
-
+            
             <div id="chatbot-messages" class="chatbot-messages">
                 <div class="chatbot-message chatbot-message-bot">
                     <div class="chatbot-avatar-small">🤖</div>
@@ -420,7 +432,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="chatbot-input-container">
                 <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type your message..."
                     autocomplete="off">
@@ -430,7 +442,7 @@
                     </svg>
                 </button>
             </div>
-
+            
             <div class="chatbot-quick-replies">
                 <button class="quick-reply-btn" data-message="Tell me about your programs">Programs</button>
                 <button class="quick-reply-btn" data-message="How do I book a trial?">Book Trial</button>
@@ -438,7 +450,7 @@
             </div>
         </div>
     </div>
-
+    
     <script src="chatbot.js"></script>
 </body>
 
