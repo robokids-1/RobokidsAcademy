@@ -11,7 +11,7 @@ ________________
 
 2. Mechanical Design & Prototyping (VEX EXP and VEX V5)
 Topics Covered:
-* Advanced mechanical concepts: gear ratios, torque, chassis design
+* Advanced mechanical concepts: gear ratios, torque, chassis design 
 * CAD basics for robotics (using Tinkercad, Fusion 360, or similar)
 * Prototyping and iterative design
 Hands-On Project:

@@ -3,6 +3,7 @@ name: Deploy src to Hostinger
 on:
   push:
     branches: [ main ]   # change if your main branch name is different
+  workflow_dispatch:    # allows manual triggering from GitHub UI
 
 jobs:
   deploy:
