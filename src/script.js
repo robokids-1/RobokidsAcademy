@@ -189,6 +189,475 @@ function initSlideshow() {
 // Initialize slideshow when page loads
 document.addEventListener('DOMContentLoaded', initSlideshow);
 
+// Learning Tracks Horizontal Slider with Pagination Dots
+function initLearningTracksSlider() {
+    const classesGrid = document.getElementById('classesGrid');
+    const paginationContainer = document.getElementById('classesPagination');
+    
+    if (!classesGrid || !paginationContainer) {
+        return; // Exit if elements don't exist
+    }
+    
+    const cards = classesGrid.querySelectorAll('.class-card');
+    if (cards.length === 0) {
+        return;
+    }
+    
+    // Check if content overflows
+    function checkOverflow() {
+        const containerWidth = classesGrid.offsetWidth;
+        const scrollWidth = classesGrid.scrollWidth;
+        const hasOverflow = scrollWidth > containerWidth;
+        
+        if (hasOverflow) {
+            paginationContainer.classList.add('active');
+            createPaginationDots();
+        } else {
+            paginationContainer.classList.remove('active');
+            paginationContainer.innerHTML = '';
+        }
+    }
+    
+    // Create pagination dots
+    function createPaginationDots() {
+        // Clear existing dots
+        paginationContainer.innerHTML = '';
+        
+        // Calculate how many cards are visible at once
+        const containerWidth = classesGrid.offsetWidth;
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        
+        const cardWidth = firstCard.offsetWidth;
+        const gap = parseFloat(getComputedStyle(classesGrid).gap) || 24;
+        const cardsPerView = Math.max(1, Math.floor((containerWidth + gap) / (cardWidth + gap)));
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Create dots
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'classes-pagination-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.addEventListener('click', () => scrollToPage(i, cardWidth, gap, cardsPerView));
+            paginationContainer.appendChild(dot);
+        }
+    }
+    
+    // Scroll to specific page
+    function scrollToPage(pageIndex, cardWidth, gap, cardsPerView) {
+        const containerWidth = classesGrid.offsetWidth;
+        const scrollWidth = classesGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Calculate scroll position based on page index
+        const scrollPercentage = totalPages > 1 ? pageIndex / (totalPages - 1) : 0;
+        const scrollPosition = scrollPercentage * maxScroll;
+        
+        classesGrid.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Update active dot based on scroll position
+    function updateActiveDot() {
+        const dots = paginationContainer.querySelectorAll('.classes-pagination-dot');
+        if (dots.length === 0) return;
+        
+        const containerWidth = classesGrid.offsetWidth;
+        const scrollLeft = classesGrid.scrollLeft;
+        const scrollWidth = classesGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        
+        // Calculate which page we're on based on scroll percentage
+        const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+        const currentPage = Math.min(
+            Math.round(scrollPercentage * (dots.length - 1)),
+            dots.length - 1
+        );
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+    }
+    
+    // Initial check with delay to ensure layout is rendered
+    setTimeout(() => {
+        checkOverflow();
+    }, 100);
+    
+    // Recheck on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            checkOverflow();
+            if (paginationContainer.classList.contains('active')) {
+                createPaginationDots();
+            }
+        }, 250);
+    });
+    
+    // Update active dot on scroll
+    classesGrid.addEventListener('scroll', updateActiveDot);
+}
+
+
+// Projects Horizontal Slider with Pagination Dots
+function initProjectsSlider() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    const paginationContainer = document.getElementById('projectsPagination');
+    
+    if (!projectsGrid || !paginationContainer) {
+        return; // Exit if elements don't exist
+    }
+    
+    const cards = projectsGrid.querySelectorAll('.project-card');
+    if (cards.length === 0) {
+        return;
+    }
+    
+    // Check if content overflows
+    function checkOverflow() {
+        const containerWidth = projectsGrid.offsetWidth;
+        const scrollWidth = projectsGrid.scrollWidth;
+        const hasOverflow = scrollWidth > containerWidth;
+        
+        if (hasOverflow) {
+            paginationContainer.classList.add('active');
+            createPaginationDots();
+        } else {
+            paginationContainer.classList.remove('active');
+            paginationContainer.innerHTML = '';
+        }
+    }
+    
+    // Create pagination dots
+    function createPaginationDots() {
+        // Clear existing dots
+        paginationContainer.innerHTML = '';
+        
+        // Calculate how many cards are visible at once
+        const containerWidth = projectsGrid.offsetWidth;
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        
+        const cardWidth = firstCard.offsetWidth;
+        const gap = parseFloat(getComputedStyle(projectsGrid).gap) || 32;
+        const cardsPerView = Math.max(1, Math.floor((containerWidth + gap) / (cardWidth + gap)));
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Create dots
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'projects-pagination-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.addEventListener('click', () => scrollToPage(i, cardWidth, gap, cardsPerView));
+            paginationContainer.appendChild(dot);
+        }
+    }
+    
+    // Scroll to specific page
+    function scrollToPage(pageIndex, cardWidth, gap, cardsPerView) {
+        const containerWidth = projectsGrid.offsetWidth;
+        const scrollWidth = projectsGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Calculate scroll position based on page index
+        const scrollPercentage = totalPages > 1 ? pageIndex / (totalPages - 1) : 0;
+        const scrollPosition = scrollPercentage * maxScroll;
+        
+        projectsGrid.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Update active dot based on scroll position
+    function updateActiveDot() {
+        const dots = paginationContainer.querySelectorAll('.projects-pagination-dot');
+        if (dots.length === 0) return;
+        
+        const containerWidth = projectsGrid.offsetWidth;
+        const scrollLeft = projectsGrid.scrollLeft;
+        const scrollWidth = projectsGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        
+        // Calculate which page we're on based on scroll percentage
+        const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+        const currentPage = Math.min(
+            Math.round(scrollPercentage * (dots.length - 1)),
+            dots.length - 1
+        );
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+    }
+    
+    // Initial check with delay to ensure layout is rendered
+    setTimeout(() => {
+        checkOverflow();
+    }, 100);
+    
+    // Recheck on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            checkOverflow();
+            if (paginationContainer.classList.contains('active')) {
+                createPaginationDots();
+            }
+        }, 250);
+    });
+    
+    // Update active dot on scroll
+    projectsGrid.addEventListener('scroll', updateActiveDot);
+}
+
+// Testimonials Horizontal Slider with Pagination Dots
+function initTestimonialsSlider() {
+    const testimonialsGrid = document.getElementById('testimonialsGrid');
+    const paginationContainer = document.getElementById('testimonialsPagination');
+    
+    if (!testimonialsGrid || !paginationContainer) {
+        return; // Exit if elements don't exist
+    }
+    
+    const cards = testimonialsGrid.querySelectorAll('.testimonial-card');
+    if (cards.length === 0) {
+        return;
+    }
+    
+    // Check if content overflows
+    function checkOverflow() {
+        const containerWidth = testimonialsGrid.offsetWidth;
+        const scrollWidth = testimonialsGrid.scrollWidth;
+        const hasOverflow = scrollWidth > containerWidth;
+        
+        if (hasOverflow) {
+            paginationContainer.classList.add('active');
+            createPaginationDots();
+        } else {
+            paginationContainer.classList.remove('active');
+            paginationContainer.innerHTML = '';
+        }
+    }
+    
+    // Create pagination dots
+    function createPaginationDots() {
+        // Clear existing dots
+        paginationContainer.innerHTML = '';
+        
+        // Calculate how many cards are visible at once
+        const containerWidth = testimonialsGrid.offsetWidth;
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        
+        const cardWidth = firstCard.offsetWidth;
+        const gap = parseFloat(getComputedStyle(testimonialsGrid).gap) || 32;
+        const cardsPerView = Math.max(1, Math.floor((containerWidth + gap) / (cardWidth + gap)));
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Create dots
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'testimonials-pagination-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.addEventListener('click', () => scrollToPage(i, cardWidth, gap, cardsPerView));
+            paginationContainer.appendChild(dot);
+        }
+    }
+    
+    // Scroll to specific page
+    function scrollToPage(pageIndex, cardWidth, gap, cardsPerView) {
+        const containerWidth = testimonialsGrid.offsetWidth;
+        const scrollWidth = testimonialsGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Calculate scroll position based on page index
+        const scrollPercentage = totalPages > 1 ? pageIndex / (totalPages - 1) : 0;
+        const scrollPosition = scrollPercentage * maxScroll;
+        
+        testimonialsGrid.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Update active dot based on scroll position
+    function updateActiveDot() {
+        const dots = paginationContainer.querySelectorAll('.testimonials-pagination-dot');
+        if (dots.length === 0) return;
+        
+        const containerWidth = testimonialsGrid.offsetWidth;
+        const scrollLeft = testimonialsGrid.scrollLeft;
+        const scrollWidth = testimonialsGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        
+        // Calculate which page we're on based on scroll percentage
+        const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+        const currentPage = Math.min(
+            Math.round(scrollPercentage * (dots.length - 1)),
+            dots.length - 1
+        );
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+    }
+    
+    // Initial check with delay to ensure layout is rendered
+    setTimeout(() => {
+        checkOverflow();
+    }, 100);
+    
+    // Recheck on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            checkOverflow();
+            if (paginationContainer.classList.contains('active')) {
+                createPaginationDots();
+            }
+        }, 250);
+    });
+    
+    // Update active dot on scroll
+    testimonialsGrid.addEventListener('scroll', updateActiveDot);
+}
+
+// Personality Horizontal Slider with Pagination Dots
+function initPersonalitySlider() {
+    const personalityGrid = document.getElementById('personalityGrid');
+    const paginationContainer = document.getElementById('personalityPagination');
+    
+    if (!personalityGrid || !paginationContainer) {
+        return; // Exit if elements don't exist
+    }
+    
+    const cards = personalityGrid.querySelectorAll('.personality-card');
+    if (cards.length === 0) {
+        return;
+    }
+    
+    // Check if content overflows
+    function checkOverflow() {
+        const containerWidth = personalityGrid.offsetWidth;
+        const scrollWidth = personalityGrid.scrollWidth;
+        const hasOverflow = scrollWidth > containerWidth;
+        
+        if (hasOverflow) {
+            paginationContainer.classList.add('active');
+            createPaginationDots();
+        } else {
+            paginationContainer.classList.remove('active');
+            paginationContainer.innerHTML = '';
+        }
+    }
+    
+    // Create pagination dots
+    function createPaginationDots() {
+        // Clear existing dots
+        paginationContainer.innerHTML = '';
+        
+        // Calculate how many cards are visible at once
+        const containerWidth = personalityGrid.offsetWidth;
+        const firstCard = cards[0];
+        if (!firstCard) return;
+        
+        const cardWidth = firstCard.offsetWidth;
+        const gap = parseFloat(getComputedStyle(personalityGrid).gap) || 32;
+        const cardsPerView = Math.max(1, Math.floor((containerWidth + gap) / (cardWidth + gap)));
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Create dots
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'personality-pagination-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.addEventListener('click', () => scrollToPage(i, cardWidth, gap, cardsPerView));
+            paginationContainer.appendChild(dot);
+        }
+    }
+    
+    // Scroll to specific page
+    function scrollToPage(pageIndex, cardWidth, gap, cardsPerView) {
+        const containerWidth = personalityGrid.offsetWidth;
+        const scrollWidth = personalityGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        const totalPages = Math.ceil(cards.length / cardsPerView);
+        
+        // Calculate scroll position based on page index
+        const scrollPercentage = totalPages > 1 ? pageIndex / (totalPages - 1) : 0;
+        const scrollPosition = scrollPercentage * maxScroll;
+        
+        personalityGrid.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Update active dot based on scroll position
+    function updateActiveDot() {
+        const dots = paginationContainer.querySelectorAll('.personality-pagination-dot');
+        if (dots.length === 0) return;
+        
+        const containerWidth = personalityGrid.offsetWidth;
+        const scrollLeft = personalityGrid.scrollLeft;
+        const scrollWidth = personalityGrid.scrollWidth;
+        const maxScroll = scrollWidth - containerWidth;
+        
+        // Calculate which page we're on based on scroll percentage
+        const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+        const currentPage = Math.min(
+            Math.round(scrollPercentage * (dots.length - 1)),
+            dots.length - 1
+        );
+        
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentPage);
+        });
+    }
+    
+    // Initial check with delay to ensure layout is rendered
+    setTimeout(() => {
+        checkOverflow();
+    }, 100);
+    
+    // Recheck on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            checkOverflow();
+            if (paginationContainer.classList.contains('active')) {
+                createPaginationDots();
+            }
+        }, 250);
+    });
+    
+    // Update active dot on scroll
+    personalityGrid.addEventListener('scroll', updateActiveDot);
+}
+
+// Initialize sliders when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initLearningTracksSlider();
+    initProjectsSlider();
+    initTestimonialsSlider();
+    initPersonalitySlider();
+});
+
 // Handle hash navigation when coming from another page
 let hashNavigationAttempts = 0;
 const MAX_HASH_NAVIGATION_ATTEMPTS = 5;
