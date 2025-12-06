@@ -20,4 +20,4 @@ jobs:
           username: u360046852
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           local-dir: src/
-          server-dir: public_html/
+          server-dir:  /domains/mediumvioletred-stinkbug-408005.hostingersite.com/public_html/
