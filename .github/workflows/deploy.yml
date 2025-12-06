@@ -18,5 +18,5 @@ jobs:
           server: 82.180.172.250
           username: u360046852
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: src
-          server-dir: public_html
+          local-dir: src/
+          server-dir: public_html/
