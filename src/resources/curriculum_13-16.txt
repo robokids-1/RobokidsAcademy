@@ -9,7 +9,7 @@ Hands-On Project:
 * Robotics Research Presentation: Teams research a field of robotics (e.g., medical, industrial, AI) and present findings, connecting to CTE and real-world applications.
 ________________
 
-2. Mechanical Design & Prototyping
+2. Mechanical Design & Prototyping (VEX EXP and VEX V5)
 Topics Covered:
 * Advanced mechanical concepts: gear ratios, torque, chassis design
 * CAD basics for robotics (using Tinkercad, Fusion 360, or similar)
