@@ -1,4 +1,4 @@
-# Deployment Guide for FutureX Robotics
+# Deployment Guide for RoboX Academy
 
 This guide covers multiple ways to deploy your static website to the internet.
 

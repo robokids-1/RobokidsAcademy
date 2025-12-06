@@ -1,4 +1,4 @@
-# FutureX Robotics
+# RoboX Academy
 
 A fun, interactive website for a robotics academy designed for kids!
 
@@ -61,5 +61,5 @@ RoboKidsAcademy/
 
 ---
 
-**Built with ❤️ for FutureX Robotics**
+**Built with ❤️ for RoboX Academy**
 

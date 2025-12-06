@@ -99,7 +99,7 @@ function parseSyllabus(text, title) {
 // Generate HTML for a module
 function generateModuleHTML(module) {
     const topicsHTML = module.topics.map(topic => `<li>${topic}</li>`).join('\n');
-    
+
     return `
         <div class="curriculum-module">
             <div class="curriculum-module-header">
@@ -148,7 +148,7 @@ async function loadCurriculumPage() {
     }
 
     // Update document title
-    document.title = `${programInfo.title} - FutureX Robotics`;
+    document.title = `${programInfo.title} - RoboX Academy`;
 
     try {
         // Fetch the curriculum file
@@ -199,7 +199,7 @@ function showError(message) {
 }
 
 // Load curriculum when page loads
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     loadCurriculumPage();
 });
 
