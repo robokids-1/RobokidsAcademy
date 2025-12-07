@@ -148,7 +148,7 @@ async function loadCurriculumPage() {
     }
 
     // Update document title
-    document.title = `${programInfo.title} - RoboX Academy`;
+    document.title = `${programInfo.title} - XTech Academy`;
 
     try {
         // Fetch the curriculum file

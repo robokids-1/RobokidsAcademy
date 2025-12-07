@@ -2087,9 +2087,22 @@ footer {
         padding: 4rem 1.5rem;
     }
 
+    .classes-grid {
+        overflow-x: visible;
+        overflow-y: visible;
+        scroll-snap-type: none;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
     .classes-grid>.class-card {
-        width: calc(100% - 0rem);
+        width: 100%;
         min-width: 100%;
+        scroll-snap-align: none;
+    }
+
+    .classes-pagination {
+        display: none !important;
     }
 
     .projects-grid>.project-card {

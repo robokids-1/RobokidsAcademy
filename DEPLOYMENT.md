@@ -1,4 +1,4 @@
-# Deployment Guide for RoboX Academy
+# Deployment Guide for XTech Academy
 
 This guide covers multiple ways to deploy your static website to the internet.
 
