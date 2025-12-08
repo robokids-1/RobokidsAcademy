@@ -44,6 +44,7 @@ ________________
 
 5. Advanced Programming & Control Systems
 Topics Covered:
+* Programming languages: Python, C, and C++ for robotics applications
 * Structured programming: functions, classes, modularity
 * PID control and feedback systems
 * Introduction to ROS (Robot Operating System) concepts
