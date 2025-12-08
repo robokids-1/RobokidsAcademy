@@ -1,4 +1,4 @@
-# XTech Academy Website
+# RoboX Academy Website
 
 A fun, interactive website for a robotics class designed for kids!
 

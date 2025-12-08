@@ -1,4 +1,4 @@
-# XTech Academy
+# RoboX Academy
 
 A fun, interactive website for a robotics academy designed for kids!
 
@@ -61,5 +61,5 @@ RoboKidsAcademy/
 
 ---
 
-**Built with ❤️ for XTech Academy**
+**Built with ❤️ for RoboX Academy**
 
