@@ -1,4 +1,4 @@
-# Deployment Guide for RoboX Academy
+# Deployment Guide for BotIQ Academy
 
 This guide covers multiple ways to deploy your static website to the internet.
 
@@ -132,4 +132,3 @@ For this project, **GitHub Pages** is recommended because:
 ---
 
 **Need help?** Check the platform-specific documentation or open an issue on GitHub.
-

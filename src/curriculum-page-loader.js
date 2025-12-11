@@ -4,22 +4,22 @@
 const programMap = {
     'beginner': {
         file: 'resources/Syllabus_6-8.txt',
-        title: 'X-Bots Beginners Curriculum',
+        title: 'BotIQ Explorers Curriculum',
         subtitle: 'Ages 8-10 years - Learning through play & simple bots'
     },
     'creator': {
         file: 'resources/Syllabus_8-10.txt',
-        title: 'X-Creators Curriculum',
+        title: 'BotIQ Designers Curriculum',
         subtitle: 'Ages 10-12 years - Basic robotics + coding concepts'
     },
     'innovator': {
         file: 'resources/Syllabus_10-13.txt',
-        title: 'X-Innovators Curriculum',
+        title: 'BotIQ Inventors Curriculum',
         subtitle: 'Ages 12-14 years - Robot building, sensors, automation'
     },
     'engineer': {
         file: 'resources/Syllabus_13-16.txt',
-        title: 'X-Engineers Curriculum',
+        title: 'BotIQ Engineers Curriculum',
         subtitle: 'Ages 14-16 years - Advanced robotics & real-world projects'
     }
 };
@@ -148,7 +148,7 @@ async function loadCurriculumPage() {
     }
 
     // Update document title
-    document.title = `${programInfo.title} - RoboX Academy`;
+    document.title = `${programInfo.title} - BotIQ Academy`;
 
     try {
         // Fetch the curriculum file
@@ -202,4 +202,3 @@ function showError(message) {
 document.addEventListener('DOMContentLoaded', function () {
     loadCurriculumPage();
 });
-

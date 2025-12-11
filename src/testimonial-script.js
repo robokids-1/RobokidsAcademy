@@ -373,10 +373,10 @@ function formatEmailBody(data) {
     body += `PROGRAM INFORMATION\n`;
     body += `-------------------\n`;
     const programNames = {
-        'beginner': '🧩 X-Bots Beginners (Ages 8-10)',
-        'engineer': '⚙️ X-Creators (Ages 10-12)',
-        'inventor': '🚀 X-Innovators (Ages 12-14)',
-        'engineers': '🔧 X-Engineers (Ages 14-16)',
+        'beginner': '🧩 BotIQ Explorers (Ages 8-10)',
+        'engineer': '⚙️ BotIQ Designers (Ages 10-12)',
+        'inventor': '🚀 BotIQ Inventors (Ages 12-14)',
+        'engineers': '🔧 BotIQ Engineers (Ages 14-16)',
         'multiple': 'Multiple Programs'
     };
     body += `Program Attended: ${programNames[data.programAttended] || data.programAttended}\n`;

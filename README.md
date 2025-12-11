@@ -1,4 +1,4 @@
-# RoboX Academy
+# BotIQ Academy
 
 A fun, interactive website for a robotics academy designed for kids!
 
@@ -61,5 +61,4 @@ RoboKidsAcademy/
 
 ---
 
-**Built with ❤️ for RoboX Academy**
-
+**Built with ❤️ for BotIQ Academy**
