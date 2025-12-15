@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Age information
         if (message.includes('age') || message.includes('old')) {
-            return "We serve children from ages 8 to 16! Our programs are divided into four programs:\n\n• Ages 8-10: BotIQ Explorers\n• Ages 10-12: BotIQ Designers\n• Ages 12-14: BotIQ Inventors\n• Ages 14-16: BotIQ Engineers\n\nWhich program are you interested in?";
+            return "We serve children from ages 7 to 16! Our programs are divided into four programs:\n\n• Ages 8-10: BotIQ Explorers\n• Ages 10-12: BotIQ Designers\n• Ages 12-14: BotIQ Inventors\n• Ages 14-16: BotIQ Engineers\n\nWhich program are you interested in?";
         }
 
         // Booking/Trial

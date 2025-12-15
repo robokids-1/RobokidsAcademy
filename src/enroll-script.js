@@ -104,10 +104,10 @@ function validateForm() {
     const ageField = document.getElementById('studentAge');
     if (ageField && ageField.value) {
         const age = parseInt(ageField.value);
-        if (age < 6 || age > 16) {
+        if (age < 7 || age > 16) {
             isValid = false;
             ageField.style.borderColor = errorColor;
-            alert('Student age must be between 6 and 16 years');
+            alert('Student age must be between 7 and 16 years');
             setTimeout(() => {
                 ageField.style.borderColor = '';
             }, 2000);
