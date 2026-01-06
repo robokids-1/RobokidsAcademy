@@ -4,22 +4,22 @@
 const programMap = {
     'beginner': {
         file: 'resources/Syllabus_6-8.txt',
-        title: 'BotIQ Explorers Curriculum',
+        title: 'BotBees Explorers Curriculum',
         subtitle: 'Ages 8-10 years - Learning through play & simple bots'
     },
     'creator': {
         file: 'resources/Syllabus_8-10.txt',
-        title: 'BotIQ Designers Curriculum',
+        title: 'BotBees Designers Curriculum',
         subtitle: 'Ages 10-12 years - Basic robotics + coding concepts'
     },
     'innovator': {
         file: 'resources/Syllabus_10-13.txt',
-        title: 'BotIQ Inventors Curriculum',
+        title: 'BotBees Inventors Curriculum',
         subtitle: 'Ages 12-14 years - Robot building, sensors, automation'
     },
     'engineer': {
         file: 'resources/Syllabus_13-16.txt',
-        title: 'BotIQ Engineers Curriculum',
+        title: 'BotBees Engineers Curriculum',
         subtitle: 'Ages 14-16 years - Advanced robotics & real-world projects'
     }
 };
@@ -148,7 +148,7 @@ async function loadCurriculumPage() {
     }
 
     // Update document title
-    document.title = `${programInfo.title} - BotIQ Academy`;
+    document.title = `${programInfo.title} - BotBees Academy`;
 
     try {
         // Fetch the curriculum file

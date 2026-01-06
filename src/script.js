@@ -730,7 +730,7 @@ window.closeCurriculum = function () {
     }
 }
 
-// BotIQ Explorers Curriculum Modal Functions
+// BotBees Explorers Curriculum Modal Functions
 window.openBeginnerCurriculum = function () {
     console.log('openBeginnerCurriculum called');
     const modal = document.getElementById('beginnerCurriculumModal');
@@ -751,7 +751,7 @@ window.closeBeginnerCurriculum = function () {
     }
 }
 
-// BotIQ Inventors Curriculum Modal Functions
+// BotBees Inventors Curriculum Modal Functions
 window.openFutureCurriculum = function () {
     console.log('openFutureCurriculum called');
     const modal = document.getElementById('futureCurriculumModal');
@@ -772,7 +772,7 @@ window.closeFutureCurriculum = function () {
     }
 }
 
-// BotIQ Engineers Curriculum Modal Functions
+// BotBees Engineers Curriculum Modal Functions
 window.openEngineersCurriculum = function () {
     console.log('openEngineersCurriculum called');
     const modal = document.getElementById('engineersCurriculumModal');

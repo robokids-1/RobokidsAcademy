@@ -1,4 +1,4 @@
-# BotIQ Academy Website
+# BotBees Academy Website
 
 A fun, interactive website for a robotics class designed for kids!
 

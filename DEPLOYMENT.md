@@ -1,4 +1,4 @@
-# Deployment Guide for BotIQ Academy
+# Deployment Guide for BotBees Academy
 
 This guide covers multiple ways to deploy your static website to the internet.
 

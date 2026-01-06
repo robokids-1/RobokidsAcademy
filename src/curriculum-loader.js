@@ -194,17 +194,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Server is running from src/ directory, so use resources/ (not src/resources/)
     const basePath = 'resources/';
 
-    // Load BotIQ Explorers curriculum (Ages 8-10)
-    loadCurriculum(basePath + 'curriculum_6-8.txt', 'beginnerCurriculumModal', 'BotIQ Explorers Curriculum', 'closeBeginnerCurriculum');
+    // Load BotBees Explorers curriculum (Ages 8-10)
+    loadCurriculum(basePath + 'curriculum_6-8.txt', 'beginnerCurriculumModal', 'BotBees Explorers Curriculum', 'closeBeginnerCurriculum');
 
-    // Load BotIQ Designers curriculum (Ages 10-12)
-    loadCurriculum(basePath + 'curriculum_8-10.txt', 'curriculumModal', 'BotIQ Designers Curriculum', 'closeCurriculum');
+    // Load BotBees Designers curriculum (Ages 10-12)
+    loadCurriculum(basePath + 'curriculum_8-10.txt', 'curriculumModal', 'BotBees Designers Curriculum', 'closeCurriculum');
 
-    // Load BotIQ Inventors curriculum (Ages 12-14)
-    loadCurriculum(basePath + 'curriculum_10-13.txt', 'futureCurriculumModal', 'BotIQ Inventors Curriculum', 'closeFutureCurriculum');
+    // Load BotBees Inventors curriculum (Ages 12-14)
+    loadCurriculum(basePath + 'curriculum_10-13.txt', 'futureCurriculumModal', 'BotBees Inventors Curriculum', 'closeFutureCurriculum');
 
-    // Load BotIQ Engineers curriculum (Ages 14-16)
-    loadCurriculum(basePath + 'curriculum_13-16.txt', 'engineersCurriculumModal', 'BotIQ Engineers Curriculum', 'closeEngineersCurriculum');
+    // Load BotBees Engineers curriculum (Ages 14-16)
+    loadCurriculum(basePath + 'curriculum_13-16.txt', 'engineersCurriculumModal', 'BotBees Engineers Curriculum', 'closeEngineersCurriculum');
 });
 
 // Initialize collapsible modules in modal

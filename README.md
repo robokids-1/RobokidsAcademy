@@ -1,4 +1,4 @@
-# BotIQ Academy
+# BotBees Academy
 
 A fun, interactive website for a robotics academy designed for kids!
 
@@ -61,4 +61,4 @@ RoboKidsAcademy/
 
 ---
 
-**Built with ❤️ for BotIQ Academy**
+**Built with ❤️ for BotBees Academy**

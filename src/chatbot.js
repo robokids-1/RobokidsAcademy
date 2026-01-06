@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Program information
         if (message.includes('program') || message.includes('course') || message.includes('class')) {
-            return "We offer four amazing programs:\n\n🧩 BotIQ Explorers (Ages 8-10) - Perfect for your child to make the first steps into technology.\n\n⚙️ BotIQ Designers (Ages 10-12) - Dive deeper into the world of Robotics and Coding.\n\n🚀 BotIQ Inventors (Ages 12-14) - Prepare to launch your child into a great career ahead.\n\n🔧 BotIQ Engineers (Ages 14-16) - Advanced engineering concepts and real-world applications.\n\nWould you like to know more about any specific program?";
+            return "We offer four amazing programs:\n\n🧩 BotBees Explorers (Ages 8-10) - Perfect for your child to make the first steps into technology.\n\n⚙️ BotBees Designers (Ages 10-12) - Dive deeper into the world of Robotics and Coding.\n\n🚀 BotBees Inventors (Ages 12-14) - Prepare to launch your child into a great career ahead.\n\n🔧 BotBees Engineers (Ages 14-16) - Advanced engineering concepts and real-world applications.\n\nWould you like to know more about any specific program?";
         }
 
         // Age information
         if (message.includes('age') || message.includes('old')) {
-            return "We serve children from ages 7 to 16! Our programs are divided into four programs:\n\n• Ages 8-10: BotIQ Explorers\n• Ages 10-12: BotIQ Designers\n• Ages 12-14: BotIQ Inventors\n• Ages 14-16: BotIQ Engineers\n\nWhich program are you interested in?";
+            return "We serve children from ages 7 to 16! Our programs are divided into four programs:\n\n• Ages 8-10: BotBees Explorers\n• Ages 10-12: BotBees Designers\n• Ages 12-14: BotBees Inventors\n• Ages 14-16: BotBees Engineers\n\nWhich program are you interested in?";
         }
 
         // Booking/Trial
