@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Server is running from src/ directory, so use resources/ (not src/resources/)
     const basePath = 'resources/';
 
-    // Load BotBees Explorers curriculum (Ages 8-10)
+    // Load BotBees Explorers curriculum (Ages 7-10)
     loadCurriculum(basePath + 'curriculum_6-8.txt', 'beginnerCurriculumModal', 'BotBees Explorers Curriculum', 'closeBeginnerCurriculum');
 
     // Load BotBees Designers curriculum (Ages 10-12)

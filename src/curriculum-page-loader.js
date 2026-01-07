@@ -5,7 +5,7 @@ const programMap = {
     'beginner': {
         file: 'resources/Syllabus_6-8.txt',
         title: 'BotBees Explorers Curriculum',
-        subtitle: 'Ages 8-10 years - Learning through play & simple bots'
+        subtitle: 'Ages 7-10 years - Learning through play & simple bots'
     },
     'creator': {
         file: 'resources/Syllabus_8-10.txt',
