@@ -48,7 +48,7 @@ RoboKidsAcademy/
 
 ## ✨ Features
 
-- 🤖 Kid-friendly design with animations
+- 🐝 Kid-friendly design with animations
 - 📱 Fully responsive (mobile, tablet, desktop)
 - 🎮 Interactive elements
 - 📝 Enrollment form

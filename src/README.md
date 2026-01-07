@@ -4,7 +4,7 @@ A fun, interactive website for a robotics class designed for kids!
 
 ## Features
 
-- 🤖 Kid-friendly design with bright colors and animations
+- 🤖🐝 Kid-friendly design with bright colors and animations
 - 📱 Fully responsive (works on phones, tablets, and computers)
 - 🎮 Interactive elements (clicking robots makes sounds!)
 - 🎨 Modern CSS with smooth animations
@@ -85,4 +85,4 @@ Works on all modern browsers:
 - Edge
 - Mobile browsers
 
-Enjoy your robotics class website! 🤖✨
+Enjoy your robotics class website! 🐝✨

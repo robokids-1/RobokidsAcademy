@@ -8,13 +8,13 @@
 }
 
 :root {
-    /* Modern Color Palette */
-    --primary: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
-    --secondary: #8b5cf6;
-    --accent: #06b6d4;
-    --accent-hover: #0891b2;
+    /* BotBees Color Palette - Bee-themed */
+    --primary: #fbbf24;
+    --primary-dark: #f59e0b;
+    --primary-light: #fcd34d;
+    --secondary: #1f2937;
+    --accent: #fbbf24;
+    --accent-hover: #f59e0b;
     --success: #10b981;
     --success-dark: #059669;
     --error: #ef4444;
@@ -34,8 +34,8 @@
     --border-light: #f3f4f6;
 
     /* Gradient Colors */
-    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --gradient-hero: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    --gradient-primary: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    --gradient-hero: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -362,13 +362,45 @@ nav {
     margin-right: auto;
 }
 
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 2rem auto;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-cta.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta.secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3);
+}
+
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 5rem;
-    margin: 4rem 0;
+    gap: 2rem;
+    margin: 3rem 0;
     flex-wrap: wrap;
     padding: 2rem 0;
+    animation: fadeInUp 1s ease-out 0.5s both;
 }
 
 .stat-item {
@@ -379,7 +411,9 @@ nav {
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all var(--transition-base);
-    min-width: 150px;
+    min-width: 140px;
+    flex: 1;
+    max-width: 200px;
 }
 
 .stat-item:hover {
@@ -390,18 +424,18 @@ nav {
 .stat-label {
     font-size: 0.875rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0.75rem;
-    font-weight: 600;
+    margin-top: 0.5rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
 }
 
 .stat-value {
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 700;
     color: white;
     font-family: var(--font-heading);
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .hero-cta {
@@ -420,7 +454,7 @@ nav {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: var(--font-body);
-    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.3);
     letter-spacing: -0.01em;
     text-decoration: none;
     display: inline-block;
@@ -441,7 +475,7 @@ nav {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 15px 30px -5px rgba(251, 191, 36, 0.4);
 }
 
 .cta-button:hover::before {
@@ -460,7 +494,7 @@ nav {
 .robot-animation {
     font-size: clamp(6rem, 15vw, 10rem);
     animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(0 10px 30px rgba(99, 102, 241, 0.2));
+    filter: drop-shadow(0 10px 30px rgba(251, 191, 36, 0.2));
 }
 
 @keyframes float {
@@ -713,7 +747,7 @@ nav {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.05) 0%, transparent 70%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -722,7 +756,7 @@ nav {
 
 .class-card:hover {
     transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.25), 0 0 0 1px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 20px 40px -12px rgba(251, 191, 36, 0.25), 0 0 0 1px rgba(251, 191, 36, 0.1);
     border-color: var(--primary-light);
 }
 
@@ -826,7 +860,7 @@ nav {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.3);
+    background: rgba(251, 191, 36, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -834,7 +868,7 @@ nav {
 }
 
 .classes-pagination-dot:hover {
-    background: rgba(99, 102, 241, 0.6);
+    background: rgba(251, 191, 36, 0.6);
     transform: scale(1.2);
 }
 
@@ -864,7 +898,7 @@ nav {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.3);
+    background: rgba(251, 191, 36, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -873,7 +907,7 @@ nav {
 
 .projects-pagination-dot:hover,
 .testimonials-pagination-dot:hover {
-    background: rgba(99, 102, 241, 0.6);
+    background: rgba(251, 191, 36, 0.6);
     transform: scale(1.2);
 }
 
@@ -902,7 +936,7 @@ nav {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.3);
+    background: rgba(251, 191, 36, 0.3);
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -910,7 +944,7 @@ nav {
 }
 
 .personality-pagination-dot:hover {
-    background: rgba(99, 102, 241, 0.6);
+    background: rgba(251, 191, 36, 0.6);
     transform: scale(1.2);
 }
 
@@ -1073,7 +1107,7 @@ nav {
 
 .project-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 40px -12px rgba(251, 191, 36, 0.2);
     border-color: var(--primary-light);
 }
 
@@ -1318,7 +1352,7 @@ nav {
 
 .testimonial-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 40px -12px rgba(251, 191, 36, 0.2);
     border-color: var(--primary-light);
 }
 
@@ -1405,19 +1439,19 @@ nav {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, var(--primary, #6366f1) 0%, var(--primary-dark, #4f46e5) 100%);
+    background: linear-gradient(135deg, var(--primary, #fbbf24) 0%, var(--primary-dark, #f59e0b) 100%);
     color: white;
     text-decoration: none;
     border-radius: 12px;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
 }
 
 .testimonial-share-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
     text-decoration: none;
     color: white;
 }
@@ -1486,7 +1520,7 @@ nav {
 
 .feature-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.15);
+    box-shadow: 0 20px 40px -12px rgba(251, 191, 36, 0.15);
     border-color: var(--primary-light);
     background: var(--bg-white);
 }
@@ -1610,7 +1644,7 @@ nav {
 
 .personality-card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px -12px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 40px -12px rgba(251, 191, 36, 0.2);
     border-color: var(--primary-light);
 }
 
@@ -1922,7 +1956,7 @@ footer {
     font-size: 1.25rem;
     font-weight: 800;
     flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
 }
 
 .curriculum-module h3 {

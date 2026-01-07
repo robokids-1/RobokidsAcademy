@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const avatar = document.createElement('div');
         avatar.className = 'chatbot-avatar-small';
-        avatar.textContent = isUser ? '👤' : '🤖';
+        avatar.textContent = isUser ? '👤' : '🐝';
 
         const content = document.createElement('div');
         content.className = 'chatbot-message-content';
