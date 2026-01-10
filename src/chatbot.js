@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Contact information
         if (message.includes('contact') || message.includes('email') || message.includes('phone') || message.includes('address')) {
-            return "You can reach us at:\n\n📧 Email: robokids209@gmail.com\n📞 Phone: (555) ROBOT-01\n📍 Address: 123 Robot Street, Tech City\n\nFeel free to ask me any other questions!";
+            return "You can reach us at:\n\n📧 Email: botbeesacademy@gmail.com\n📞 Phone: (555) ROBOT-01\n📍 Address: 123 Robot Street, Tech City\n\nFeel free to ask me any other questions!";
         }
 
         // Pricing
         if (message.includes('price') || message.includes('cost') || message.includes('fee') || message.includes('payment')) {
-            return "We offer a free 1:1 Live Online Robotics Session trial! For detailed pricing information, please contact us directly at robokids209@gmail.com or book a free trial to discuss our programs and pricing options.";
+            return "We offer a free 1:1 Live Online Robotics Session trial! For detailed pricing information, please contact us directly at botbeesacademy@gmail.com or book a free trial to discuss our programs and pricing options.";
         }
 
         // Curriculum

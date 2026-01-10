@@ -303,7 +303,7 @@ function sendTestimonialEmail(formData) {
 
     // EmailJS template parameters
     const templateParams = {
-        to_email: 'robokids209@gmail.com',
+        to_email: 'botbeesacademy@gmail.com',
         from_name: `${fromName} (${relationship})`,
         subject: `New Testimonial Submission - ${fromName}`,
         message: emailBody,

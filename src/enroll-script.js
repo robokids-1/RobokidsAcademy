@@ -192,7 +192,7 @@ function sendEnquiryEmail(formData) {
 
     // EmailJS template parameters
     const templateParams = {
-        to_email: 'robokids209@gmail.com',
+        to_email: 'botbeesacademy@gmail.com',
         from_name: `${formData.parentFirstName} ${formData.parentLastName}`,
         subject: `New Enquiry: ${formData.studentFirstName} ${formData.studentLastName}`,
         message: emailBody,

@@ -1,6 +1,6 @@
 # EmailJS Setup Guide
 
-This guide will help you configure EmailJS to send enrollment form submissions to robokids209@gmail.com.
+This guide will help you configure EmailJS to send enrollment form submissions to botbeesacademy@gmail.com.
 
 ## Step 1: Create EmailJS Account
 
@@ -66,7 +66,7 @@ emailjs.send('service_abc123', 'template_xyz789', templateParams)
 
 1. Open the enrollment form on your website
 2. Fill out and submit a test enrollment
-3. Check robokids209@gmail.com for the email
+3. Check botbeesacademy@gmail.com for the email
 
 ## Troubleshooting
 
@@ -86,5 +86,5 @@ If you prefer a simpler setup without API keys:
 
 ---
 
-**Note:** The email will be sent to `robokids209@gmail.com` as configured in the code.
+**Note:** The email will be sent to `botbeesacademy@gmail.com` as configured in the code.
 
